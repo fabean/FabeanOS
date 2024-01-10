@@ -4,6 +4,8 @@ FabeanOS is my production machines config files.
 
 As of right now this is basically a copy of [ZaneyOS](https://gitlab.com/Zaney/zaneyos) with just some changes to get packages I need working.
 
+You will need to [enable flakes first](https://nixos-and-flakes.thiscute.world/nixos-with-flakes/nixos-with-flakes-enabled) before using this.
+
 ![](demo.jpg)
 
 ## What Is NixOS
