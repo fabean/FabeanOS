@@ -60,7 +60,7 @@
     openra font-awesome symbola noto-fonts-color-emoji material-icons
     hyprland brave slack bitwarden obsidian syncthing tailscale tailscale-systray
     php ddev vscode beekeeper-studio watson ungoogled-chromium beeper zoom-us
-    blueman mkcert thunderbird awscli2 kubectx kubectl eksctl tmux fish
+    blueman mkcert thunderbird awscli2 kubectx kubectl eksctl tmux fish jq
     # Import Scripts
     (import ./scripts/emopicker9000.nix { inherit pkgs; })
     (import ./scripts/task-waybar.nix { inherit pkgs; })
