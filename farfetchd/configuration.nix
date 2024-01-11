@@ -46,7 +46,10 @@
     description = "Josh Fabean";
     extraGroups = [ "networkmanager" "wheel" "disk" "power" "video" "docker"];
     packages = with pkgs; [];
+    shell = pkgs.fish;
   };
+
+  programs.fish.enable = true;
 
   # Allow unfree packages
   nixpkgs = {

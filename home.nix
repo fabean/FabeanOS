@@ -74,7 +74,7 @@
     openra font-awesome symbola noto-fonts-color-emoji material-icons
     hyprland brave slack bitwarden obsidian syncthing tailscale tailscale-systray
     php ddev vscode beekeeper-studio watson ungoogled-chromium beeper zoom-us
-    blueman mkcert thunderbird awscli2 kubectx kubectl eksctl tmux fish jq
+    blueman mkcert thunderbird awscli2 kubectx kubectl eksctl tmux jq
     powerline-go trashy calc
     # Import Scripts
     (import ./scripts/emopicker9000.nix { inherit pkgs; })
@@ -148,13 +148,16 @@
     };
   };
 
-  programs.fish.enable = true;
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   programs.kitty = {
     enable = true;
     package = pkgs.kitty;
     font.name = "JetBrainsMono Nerd Font";
-    font.size = 16;
+    font.size = 12;
     settings = {
       scrollback_lines = 2000;
       wheel_scroll_min_lines = 1;
