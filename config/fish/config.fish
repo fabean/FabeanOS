@@ -17,7 +17,7 @@ alias docker-composer='docker-compose'
 alias docker-start='systemctl start docker'
 alias docker-stop='systemctl stop docker'
 alias mux='tmuxinator'
-alias rm='trashy'
+alias rm='trash'
 alias vpn-start='wg-quick up ~/Sync/settings-sync/josh-ck-vpn.conf'
 alias vpn-stop='wg-quick down ~/Sync/settings-sync/josh-ck-vpn.conf'
 #function vpn-start
