@@ -144,6 +144,7 @@
     (import ./scripts/task-waybar.nix { inherit pkgs; })
     (import ./scripts/squirtle.nix { inherit pkgs; })
     (import ./scripts/watson-status.nix { inherit pkgs; })
+    (import ./scripts/wallsetter.nix { inherit pkgs; })
   ];
 
   home.pointerCursor = {
