@@ -8,9 +8,6 @@
   home.file.".config/zaney-stinger.mov" = {
     source = ./media/zaney-stinger.mov;
   };
-  home.file.".config/wallpaper.png" = {
-    source = ./media/wallpaper.png;
-  };
   home.file.".local/share/fonts" = {
     source = ./fonts;
     recursive = true;
@@ -53,6 +50,7 @@
     source = ./config/tmux;
     recursive = true;
   };
+  home.file.".face".source = ./config/face.jpg;
 
   xresources.properties = {
     "Xcursor.size" = 24;

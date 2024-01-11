@@ -113,8 +113,12 @@
     layout = "us";
     xkbVariant = "";
     libinput.enable = true;
-    displayManager.sddm.enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
   };
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
