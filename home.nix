@@ -80,6 +80,7 @@
     (import ./scripts/emopicker9000.nix { inherit pkgs; })
     (import ./scripts/task-waybar.nix { inherit pkgs; })
     (import ./scripts/squirtle.nix { inherit pkgs; })
+    (import ./scripts/watson-status.nix { inherit pkgs; })
   ];
 
   home.pointerCursor = {
@@ -291,21 +292,10 @@
       };
       "custom/watson" = {
         tooltip = false;
-        format = "{icon} {}";
-        format-icons = {
-          notification = "⏲️<span foreground='red'><sup></sup></span>";
-          none = "⏲️";
-          dnd-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-none = "";
-          inhibited-notification = "<span foreground='red'><sup></sup></span>";
-          inhibited-none = "";
-          dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-inhibited-none = "";
-       	};
-        return-type = "json";
-        exec-if = "which swaync-client";
-        exec = "watson status";
-        on-click = "task-waybar";
+        format = " {}";
+        exec = "watson-status";
+        on-click = "watson stop";
+        interval = 10;
         escape = true;
       };
       "battery" = {
@@ -390,6 +380,13 @@
 	}
 	#clock {
     		color: #c0caf5;
+    		background: #1a1b26;
+    		border-radius: 15px 50px 15px 50px;
+    		margin: 5px;
+    		padding: 2px 20px;
+	}
+	#custom-watson {
+    		color: #9ece6a;
     		background: #1a1b26;
     		border-radius: 15px 50px 15px 50px;
     		margin: 5px;
