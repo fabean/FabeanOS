@@ -65,17 +65,82 @@
   };
 
   home.packages = with pkgs; [
-    neofetch lolcat cmatrix discord firefox btop libvirt
-    swww polkit_gnome grim slurp lm_sensors unzip unrar gnome.file-roller
-    libnotify swaynotificationcenter rofi-wayland xfce.thunar imv v4l-utils
-    ydotool wl-clipboard socat cowsay lsd pkg-config mpv
-    gimp obs-studio kdenlive glibc gnumake ninja go
-    nodejs godot_4 pavucontrol audacity zeroad gvfs udiskie
-    openra font-awesome symbola noto-fonts-color-emoji material-icons
-    hyprland brave slack bitwarden obsidian syncthing tailscale tailscale-systray
-    php ddev vscode beekeeper-studio watson ungoogled-chromium beeper zoom-us
-    blueman mkcert thunderbird awscli2 kubectx kubectl eksctl tmux jq
-    powerline-go trashy calc
+    audacity
+    awscli2
+    beekeeper-studio
+    beeper
+    bitwarden
+    blueman
+    brave
+    btop
+    calc
+    cmatrix
+    cowsay
+    ddev
+    discord
+    eksctl
+    firefox
+    font-awesome
+    gimp
+    glibc
+    gnome.file-roller
+    gnumake
+    go
+    godot_4
+    grim
+    gvfs
+    hyprland
+    imv
+    jq
+    kdenlive
+    kubectl
+    kubectx
+    libnotify
+    libvirt
+    lm_sensors
+    lolcat
+    lsd
+    material-icons
+    mkcert
+    mpv
+    neofetch
+    ninja
+    nodejs
+    noto-fonts-color-emoji
+    obs-studio
+    obsidian
+    openra
+    pavucontrol
+    php
+    pkg-config
+    platformsh
+    polkit_gnome
+    powerline-go
+    rofi-wayland
+    slack
+    slurp
+    socat
+    swaynotificationcenter
+    swww
+    symbola
+    syncthing
+    tailscale
+    tailscale-systray
+    thunderbird
+    tmux
+    trashy
+    udiskie
+    ungoogled-chromium
+    unrar
+    unzip
+    v4l-utils
+    vscode
+    watson
+    wl-clipboard
+    xfce.thunar
+    ydotool
+    zeroad
+    zoom-us
     # Import Scripts
     (import ./scripts/emopicker9000.nix { inherit pkgs; })
     (import ./scripts/task-waybar.nix { inherit pkgs; })
