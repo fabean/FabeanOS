@@ -39,6 +39,20 @@
     source = ./config/hyprland;
     recursive = true;
   };
+  home.file.".config/fish" = {
+    source = ./config/fish;
+    recursive = true;
+  };
+  home.file.".tmux.conf" = {
+    source = ./config/tmux/tmux.conf;
+  };
+  home.file.".tmux.powerline.conf" = {
+    source = ./config/tmux/tmux.powerline.conf;
+  };
+  home.file.".tmux" = {
+    source = ./config/tmux;
+    recursive = true;
+  };
 
   xresources.properties = {
     "Xcursor.size" = 24;
@@ -61,6 +75,7 @@
     hyprland brave slack bitwarden obsidian syncthing tailscale tailscale-systray
     php ddev vscode beekeeper-studio watson ungoogled-chromium beeper zoom-us
     blueman mkcert thunderbird awscli2 kubectx kubectl eksctl tmux fish jq
+    powerline-go trashy
     # Import Scripts
     (import ./scripts/emopicker9000.nix { inherit pkgs; })
     (import ./scripts/task-waybar.nix { inherit pkgs; })
@@ -132,6 +147,8 @@
     };
   };
 
+  programs.fish.enable = true;
+
   programs.kitty = {
     enable = true;
     package = pkgs.kitty;
@@ -191,7 +208,7 @@
       position = "top";
 
       modules-left = [ "hyprland/window" ];
-      modules-center = [ "network" "pulseaudio" "cpu" "hyprland/workspaces" "memory" "disk" "clock" ];
+      modules-center = [ "network" "pulseaudio" "cpu" "hyprland/workspaces" "memory" "battery" "clock" "custom/watson"];
       modules-right = [ "custom/notification" "tray" ];
       "hyprland/workspaces" = {
       	format = "{name}";
@@ -269,6 +286,25 @@
         return-type = "json";
         exec-if = "which swaync-client";
         exec = "swaync-client -swb";
+        on-click = "task-waybar";
+        escape = true;
+      };
+      "custom/watson" = {
+        tooltip = false;
+        format = "{icon} {}";
+        format-icons = {
+          notification = "⏲️<span foreground='red'><sup></sup></span>";
+          none = "⏲️";
+          dnd-notification = "<span foreground='red'><sup></sup></span>";
+          dnd-none = "";
+          inhibited-notification = "<span foreground='red'><sup></sup></span>";
+          inhibited-none = "";
+          dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+          dnd-inhibited-none = "";
+       	};
+        return-type = "json";
+        exec-if = "which swaync-client";
+        exec = "watson status";
         on-click = "task-waybar";
         escape = true;
       };
