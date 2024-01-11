@@ -75,7 +75,7 @@
     hyprland brave slack bitwarden obsidian syncthing tailscale tailscale-systray
     php ddev vscode beekeeper-studio watson ungoogled-chromium beeper zoom-us
     blueman mkcert thunderbird awscli2 kubectx kubectl eksctl tmux fish jq
-    powerline-go trashy
+    powerline-go trashy calc
     # Import Scripts
     (import ./scripts/emopicker9000.nix { inherit pkgs; })
     (import ./scripts/task-waybar.nix { inherit pkgs; })

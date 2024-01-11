@@ -132,7 +132,7 @@
   hardware.pulseaudio.enable = false;
   sound.enable = true;
   security.rtkit.enable = true;
-
+  security.pki.certificateFiles = [ "/home/josh/.local/share/mkcert/rootCA.pem" ];
 
   system.stateVersion = "23.11";
   nix = {
