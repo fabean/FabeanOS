@@ -44,7 +44,15 @@
   users.users.josh = {
     isNormalUser = true;
     description = "Josh Fabean";
-    extraGroups = [ "networkmanager" "wheel" "disk" "power" "video" "docker"];
+    extraGroups = [
+      "networkmanager" 
+      "wheel" 
+      "disk" 
+      "power" 
+      "video" 
+      "docker"
+      "dialout"
+    ];
     packages = with pkgs; [];
     shell = pkgs.fish;
   };
