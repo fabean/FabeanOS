@@ -70,6 +70,7 @@
     bitwarden
     blueman
     brave
+    brightnessctl
     btop
     calc
     cmatrix
