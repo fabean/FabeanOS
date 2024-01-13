@@ -14,20 +14,20 @@
     pkgs = import nixpkgs {
       inherit system;
       config = {
-	  allowUnfree = true;
+        allowUnfree = true;
       };
     };
   in {
     nixosConfigurations = {
       farfetchd = nixpkgs.lib.nixosSystem {
-	    specialArgs = { inherit system; inherit inputs; };
-	    modules = [ ./farfetchd/configuration.nix
+        specialArgs = { inherit system; inherit inputs; };
+        modules = [ ./farfetchd/configuration.nix
           home-manager.nixosModules.home-manager {
-	        home-manager.useGlobalPkgs = true;
-	        home-manager.useUserPackages = true;
-	        home-manager.users.josh = import ./home.nix;
-	      }
-	    ];
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.josh = import ./home.nix;
+          }
+        ];
       };
     };
   };
