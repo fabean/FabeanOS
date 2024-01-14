@@ -79,6 +79,7 @@
     discord
     eksctl
     firefox
+    floorp
     font-awesome
     gimp
     glibc
@@ -117,6 +118,7 @@
     pkg-config
     platformsh
     polkit_gnome
+    powertop
     powerline-go
     prusa-slicer
     rofi-wayland
