@@ -86,6 +86,8 @@
     gnumake
     go
     godot_4
+    glow
+    gum
     grim
     gvfs
     hyprland
@@ -95,6 +97,7 @@
     kubectl
     kubectx
     libnotify
+    libreoffice
     libvirt
     lm_sensors
     lolcat
@@ -115,6 +118,7 @@
     platformsh
     polkit_gnome
     powerline-go
+    prusa-slicer
     rofi-wayland
     slack
     slurp
@@ -133,6 +137,7 @@
     unrar
     unzip
     v4l-utils
+    vhs
     vscode
     watson
     wl-clipboard
