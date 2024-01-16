@@ -45,11 +45,11 @@
     isNormalUser = true;
     description = "Josh Fabean";
     extraGroups = [
-      "networkmanager" 
-      "wheel" 
-      "disk" 
-      "power" 
-      "video" 
+      "networkmanager"
+      "wheel"
+      "disk"
+      "power"
+      "video"
       "docker"
       "dialout"
     ];
@@ -72,6 +72,13 @@
   environment.systemPackages = with pkgs; [
     vim wget curl
   ];
+  environment = {
+    variables = {
+      EDITOR = "vim";
+      SYSTEMD_EDITOR = "vim";
+      VISUAL = "vim";
+    };
+  };
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
