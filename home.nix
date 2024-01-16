@@ -78,6 +78,7 @@
     ddev
     discord
     eksctl
+    evince
     firefox
     floorp
     font-awesome
@@ -145,8 +146,13 @@
     wl-clipboard
     xfce.thunar
     ydotool
+    youtube-tui
     zeroad
     zoom-us
+    pinentry
+    rbw
+    ydotool
+    rofi-rbw
     # Import Scripts
     (import ./scripts/emopicker9000.nix { inherit pkgs; })
     (import ./scripts/task-waybar.nix { inherit pkgs; })
@@ -412,7 +418,7 @@
     		margin: 4px 3px;
     		border-radius: 15px;
     		border: 0px;
-    		color: #15161e;
+    		color: #7aa2f7;
     		background-color: #1a1b26;
     		opacity: 1.0;
     		transition: all 0.3s ease-in-out;
