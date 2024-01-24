@@ -46,7 +46,7 @@
   home.file.".tmux.powerline.conf" = {
     source = ./config/tmux/tmux.powerline.conf;
   };
-  home.file.".tmux" = {
+  home.file.".config/tmux" = {
     source = ./config/tmux;
     recursive = true;
   };
@@ -63,6 +63,7 @@
   };
 
   home.packages = with pkgs; [
+    ansible
     audacity
     awscli2
     beekeeper-studio
@@ -74,7 +75,9 @@
     btop
     calc
     cmatrix
+    php82Packages.composer
     cowsay
+    dbeaver
     ddev
     discord
     eksctl
@@ -114,6 +117,7 @@
     obs-studio
     obsidian
     openra
+    openscad
     pavucontrol
     php
     pkg-config
@@ -229,6 +233,10 @@
   programs.vim = {
     enable = true;
     defaultEditor = true;
+  };
+
+  programs.neovim = {
+    enable = true;
   };
 
   programs.kitty = {
