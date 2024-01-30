@@ -172,7 +172,7 @@
   virtualisation.docker.enable = true;
   ## 9003 - xdebug
   ## 8384, 22000 Syncthing
-  networking.firewall.allowedTCPPorts = [ 8384 22000 9003 ];
+  networking.firewall.allowedTCPPorts = [ 8384 22000 9003 5432 ];
   ## Syncthing
   networking.firewall.allowedUDPPorts = [ 22000 21027 ];
   environment.etc.hosts.mode = "0644";
