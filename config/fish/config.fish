@@ -13,9 +13,6 @@ alias ggpull='git pull origin (git_current_branch)'
 alias ggpush='git push origin (git_current_branch)'
 alias weather='curl wttr.in'
 #alias fox='MOZ_ENABLE_WAYLAND=1 firefox-developer-edition'
-alias docker-composer='docker-compose'
-alias docker-start='systemctl start docker'
-alias docker-stop='systemctl stop docker'
 alias mux='tmuxinator'
 alias rm='trash'
 alias vpn-start='wg-quick up ~/Sync/settings-sync/josh-ck-vpn.conf'
@@ -28,9 +25,9 @@ alias vpn-stop='wg-quick down ~/Sync/settings-sync/josh-ck-vpn.conf'
 #  sudo systemctl stop openvpn-client@$argv
 #end
 
-function vpn-status
-  sudo systemctl status openvpn-client@$argv
-end
+#function vpn-status
+#  sudo systemctl status openvpn-client@$argv
+#end
 
 function notify
   $argv && play ~/Music/zelda-secret.mp3
