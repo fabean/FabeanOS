@@ -40,16 +40,6 @@
     source = ./config/fish;
     recursive = true;
   };
-  home.file.".tmux.conf" = {
-    source = ./config/tmux/tmux.conf;
-  };
-  home.file.".tmux.powerline.conf" = {
-    source = ./config/tmux/tmux.powerline.conf;
-  };
-  home.file.".config/tmux" = {
-    source = ./config/tmux;
-    recursive = true;
-  };
   home.file.".face".source = ./config/face.jpg;
 
   xresources.properties = {
@@ -75,30 +65,32 @@
     btop
     calc
     cmatrix
-    php82Packages.composer
     cowsay
     dbeaver
     ddev
     discord
     eksctl
+    espanso-wayland
     evince
+    filezilla
     firefox
     floorp
     font-awesome
     gimp
     glibc
+    glow
     gnome.file-roller
     gnumake
     go
     godot_4
-    glow
-    gum
     grim
+    gum
     gvfs
     hyprland
     imv
     jq
     kdenlive
+    kooha
     kubectl
     kubectx
     libnotify
@@ -120,12 +112,16 @@
     openscad
     pavucontrol
     php
+    php82Packages.composer
+    pinentry
     pkg-config
     platformsh
     polkit_gnome
-    powertop
     powerline-go
+    powertop
     prusa-slicer
+    rbw
+    rofi-rbw
     rofi-wayland
     slack
     slurp
@@ -137,7 +133,6 @@
     tailscale
     tailscale-systray
     thunderbird
-    tmux
     trashy
     udiskie
     ungoogled-chromium
@@ -150,13 +145,11 @@
     wl-clipboard
     xfce.thunar
     ydotool
+    ydotool
     youtube-tui
+    zellij
     zeroad
     zoom-us
-    pinentry
-    rbw
-    ydotool
-    rofi-rbw
     # Import Scripts
     (import ./scripts/emopicker9000.nix { inherit pkgs; })
     (import ./scripts/task-waybar.nix { inherit pkgs; })
@@ -217,7 +210,7 @@
     enable = true;
     enableCompletion = true;
     sessionVariables = {
-    
+
     };
     shellAliases = {
       sv="sudo vim";
