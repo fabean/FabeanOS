@@ -57,6 +57,8 @@
     audacity
     awscli2
     beekeeper-studio
+    bruno
+    qemu
     beeper
     bitwarden
     blueman
@@ -66,9 +68,11 @@
     calc
     cmatrix
     cowsay
+    dart
     dbeaver
     ddev
     discord
+    distrobox
     eksctl
     espanso-wayland
     evince
@@ -80,14 +84,17 @@
     glibc
     glow
     gnome.file-roller
+    gnome.gnome-boxes
     gnumake
     go
     godot_4
     grim
     gum
     gvfs
+    heroic
     hyprland
     imv
+    jellyfin-media-player
     jq
     kdenlive
     kooha
@@ -109,10 +116,13 @@
     obs-studio
     obsidian
     openra
+    openrct2
     openscad
     pavucontrol
+    parsec-bin
     php
     php82Packages.composer
+    pidgin
     pinentry
     pkg-config
     platformsh
@@ -126,6 +136,7 @@
     slack
     slurp
     socat
+    spotify
     swaynotificationcenter
     swww
     symbola
@@ -144,6 +155,7 @@
     watson
     wl-clipboard
     xfce.thunar
+    yarn
     ydotool
     ydotool
     youtube-tui
