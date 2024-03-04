@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
-let inherit (import ../../options.nix) flakeDir theShell hostname; in
-lib.mkIf (theShell == "zsh") {
+let inherit (import ../../options.nix) flakeDir theShell hostname;
+in lib.mkIf (theShell == "zsh") {
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
@@ -44,17 +44,21 @@ lib.mkIf (theShell == "zsh") {
 
     };
     shellAliases = {
-      sv="sudo nvim";
-      flake-rebuild="nh os switch --nom --hostname ${hostname}";
-      flake-update="nh os switch --nom --hostname ${hostname} --update";
-      gcCleanup="nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-      v="nvim";
-      ls="lsd";
-      ll="lsd -l";
-      la="lsd -a";
-      lal="lsd -al";
-      ".."="cd ..";
-      neofetch="neofetch --ascii ~/.config/ascii-neofetch";
+      sv = "sudo nvim";
+      flake-rebuild = "nh os switch --nom --hostname ${hostname}";
+      flake-update = "nh os switch --nom --hostname ${hostname} --update";
+      gcCleanup =
+        "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+      v = "nvim";
+      ls = "lsd";
+      ll = "lsd -l";
+      la = "lsd -a";
+      lal = "lsd -al";
+      ".." = "cd ..";
+      ggpull = "git pull origin $(git branch --show-current)";
+      ggpush = "git push origin $(git branch --show-current)";
+      gs = "git status";
+      neofetch = "neofetch --ascii ~/.config/ascii-neofetch";
     };
   };
 }
