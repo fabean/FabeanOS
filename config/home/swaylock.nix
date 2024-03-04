@@ -1,7 +1,6 @@
 { pkgs, config, ... }:
 
-let
-  palette = config.colorScheme.palette;
+let palette = config.colorScheme.palette;
 in {
   home.file.".config/swaylock/config".text = ''
     indicator-caps-lock

@@ -8,12 +8,12 @@ in {
     enable = true;
 
     globals.mapleader = " "; # Sets the leader key to space
-    
+
     options = {
-      clipboard="unnamedplus";
-      number = true;         # Show line numbers
+      clipboard = "unnamedplus";
+      number = true; # Show line numbers
       relativenumber = true; # Show relative line numbers
-      shiftwidth = 2;        # Tab width should be 2
+      shiftwidth = 2; # Tab width should be 2
       softtabstop = 2;
       smartindent = true;
       wrap = false;
@@ -45,79 +45,74 @@ in {
       base0E = "#${theme.base0E}";
       base0F = "#${theme.base0F}";
     };
-    
+
     plugins = {
       barbecue.enable = true;
       gitsigns.enable = true;
       telescope = {
-	enable = true;
-	keymaps = {
-	  "<leader>ff" = "find_files";
-	  "<leader>lg" = "live_grep";
-	};
+        enable = true;
+        keymaps = {
+          "<leader>ff" = "find_files";
+          "<leader>lg" = "live_grep";
+        };
       };
       indent-blankline.enable = true;
       nvim-colorizer.enable = true;
       nvim-autopairs.enable = true;
       nix.enable = true;
       comment-nvim.enable = true;
-      lualine = {
+      lualine = { enable = true; };
+      startup = {
         enable = true;
-      };
-      startup = { 
-	enable = true;
-	theme = "dashboard";
+        theme = "dashboard";
       };
       lsp = {
-	enable = true;
-	servers = {
-	  tsserver.enable = true;
-	  lua-ls.enable = true;
-	  bashls.enable = true;
-	  rust-analyzer = {
-	    enable = true;
-	    installRustc = true;
-	    installCargo = true;
-	  };
-	  nixd.enable = true;
-	  html.enable = true;
-	  ccls.enable = true;
-	  cmake.enable = true;
-	  csharp-ls.enable = true;
-	  cssls.enable = true;
-	  gopls.enable = true;
-	  jsonls.enable = true;
-	  pyright.enable = true;
-	  tailwindcss.enable = true;
-	};
+        enable = true;
+        servers = {
+          tsserver.enable = true;
+          lua-ls.enable = true;
+          bashls.enable = true;
+          rust-analyzer = {
+            enable = true;
+            installRustc = true;
+            installCargo = true;
+          };
+          nixd.enable = true;
+          html.enable = true;
+          ccls.enable = true;
+          cmake.enable = true;
+          csharp-ls.enable = true;
+          cssls.enable = true;
+          gopls.enable = true;
+          jsonls.enable = true;
+          pyright.enable = true;
+          tailwindcss.enable = true;
+        };
       };
       lsp-lines.enable = true;
       treesitter = {
-	enable = true;
-	nixGrammars = true;
+        enable = true;
+        nixGrammars = true;
       };
       nvim-cmp = {
-	enable = true;
-	autoEnableSources = true;
-	sources = [
-	  { name = "nvim_lsp"; }
-	  { name = "path"; }
-	  { name = "buffer"; }
-	];
-	mapping = {
-	  "<CR>" = "cmp.mapping.confirm({ select = true })";
-	  "<Tab>" = {
-	    action = ''cmp.mapping.select_next_item()'';
-	    modes = [ "i" "s" ];
-	  };
-	};
+        enable = true;
+        autoEnableSources = true;
+        sources =
+          [ { name = "nvim_lsp"; } { name = "path"; } { name = "buffer"; } ];
+        mapping = {
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<Tab>" = {
+            action = "cmp.mapping.select_next_item()";
+            modes = [ "i" "s" ];
+          };
+        };
       };
     };
 
     extraPlugins = [ plugins.telescope-file-browser-nvim ];
 
     # FOR NEOVIDE
-    extraConfigLua = '' 
+    extraConfigLua = ''
       vim.opt.guifont = "JetBrainsMono\\ NFM,Noto_Color_Emoji:h14"
       vim.g.neovide_cursor_animation_length = 0.05
 
@@ -204,6 +199,5 @@ in {
       }
     ];
 
-
   };
- } 
+}
