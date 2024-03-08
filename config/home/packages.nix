@@ -15,6 +15,7 @@ in {
     discord
     element-desktop
     floorp
+    firefox
     font-awesome
     gimp
     glow

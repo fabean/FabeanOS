@@ -41,7 +41,7 @@ in lib.mkIf (theShell == "zsh") {
       compinit
     '';
     sessionVariables = {
-
+      EDITOR = "nvim";
     };
     shellAliases = {
       sv = "sudo nvim";
@@ -50,6 +50,7 @@ in lib.mkIf (theShell == "zsh") {
       gcCleanup =
         "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       v = "nvim";
+      vim = "nvim";
       ls = "lsd";
       ll = "lsd -l";
       la = "lsd -a";
