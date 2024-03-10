@@ -11,6 +11,7 @@ in {
     beeper
     brave
     bruno
+    calc
     ddev
     discord
     element-desktop
