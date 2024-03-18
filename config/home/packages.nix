@@ -65,6 +65,7 @@ in {
     vscode
     watson
     yarn
+    youtube-tui
     zellij
     zoom-us
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
