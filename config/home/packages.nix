@@ -15,8 +15,8 @@ in {
     ddev
     discord
     element-desktop
-    floorp
     firefox
+    floorp
     font-awesome
     gimp
     glow
@@ -27,6 +27,7 @@ in {
     gum
     imv
     jq
+    krita
     kubectl
     kubectx
     libreoffice
