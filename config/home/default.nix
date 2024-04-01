@@ -21,6 +21,7 @@
     ./swaync.nix
     ./wezterm.nix
     ./zsh.nix
+    ./helix.nix
     # ./warp.nix
 
     # Place Home Files Like Pictures
