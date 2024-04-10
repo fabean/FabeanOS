@@ -32,6 +32,7 @@ in {
     kubectx
     libreoffice
     libvirt
+    mailspring
     mkcert
     mpv
     neovide
@@ -64,6 +65,7 @@ in {
     ungoogled-chromium
     vhs
     vscode
+    warp-terminal
     watson
     yarn
     youtube-tui
