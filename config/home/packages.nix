@@ -24,6 +24,7 @@ in {
     gnome.gnome-boxes
     go
     grim
+    gscan2pdf
     gum
     imv
     jq
@@ -60,6 +61,8 @@ in {
     tailscale-systray
     teams-for-linux
     thunderbird
+    tidal-dl
+    tidal-hifi
     transmission-gtk
     tree
     ungoogled-chromium

@@ -19,6 +19,7 @@ in {
   slickbar = if waybarStyle == "slickbar" then true else false;
   simplebar = if waybarStyle == "simplebar" then true else false;
   bar-number = true; # Enable / Disable Workspace Numbers In Waybar
+  waybarAnim = true; # Enable / Disable Waybar Animation CSS
   borderAnim = true;
   browser = "floorp";
   #wallpaperGit = "https://gitlab.com/Zaney/my-wallpapers.git"; # This will give you my wallpapers
