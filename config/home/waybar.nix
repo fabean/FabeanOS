@@ -13,7 +13,9 @@ in with lib; {
       layer = "top";
       position = "top";
 
-      modules-center = [ "hyprland/workspaces" ];
+      modules-center = [
+        "hyprland/workspaces"
+      ];
       modules-left = [
         "custom/startmenu"
         "hyprland/window"
@@ -35,11 +37,6 @@ in with lib; {
 
       "hyprland/workspaces" = {
         format = if bar-number == true then "{name}" else "{icon}";
-        format-icons = {
-          default = " ";
-          active = " ";
-          urgent = " ";
-        };
         on-scroll-up = "hyprctl dispatch workspace e+1";
         on-scroll-down = "hyprctl dispatch workspace e-1";
       };
@@ -52,7 +49,6 @@ in with lib; {
       "hyprland/window" = {
         max-length = 25;
         separate-outputs = false;
-        rewrite = { "" = " 🙈 No Windows? "; };
       };
       "memory" = {
         interval = 5;
