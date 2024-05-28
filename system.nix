@@ -65,6 +65,7 @@ in {
     FLAKE = "${flakeDir}";
     POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Optimization settings and garbage collection automation
   nix = {
