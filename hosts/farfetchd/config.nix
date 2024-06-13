@@ -412,6 +412,10 @@
     };
     rpcbind.enable = true;
     nfs.server.enable = true;
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "both";
+    };
   };
   systemd.services.flatpak-repo = {
     path = [ pkgs.flatpak ];
