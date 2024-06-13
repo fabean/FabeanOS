@@ -51,7 +51,7 @@ with lib;
           exec-once = nm-applet --indicator
           exec-once = lxqt-policykit-agent
           exec-once = tailscale-systray
-          exec-once = swww img /home/${username}/Pictures/Wallpapers/zaney-wallpaper.jpg
+          exec-once = swww img /home/${username}/Pictures/Wallpapers/sunrise.jpg
           monitor=,preferred,auto,1
           ${extraMonitorSettings}
           general {
@@ -70,9 +70,11 @@ with lib;
               natural_scroll = true
               clickfinger_behavior = true
               tap-to-click = false
+              scroll_factor = 0.2
             }
             sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
             accel_profile = flat
+            scroll_factor = 0.2
           }
           windowrule = noborder,^(wofi)$
           windowrule = center,^(wofi)$

@@ -49,7 +49,7 @@
   # Styling Options
   stylix = {
     enable = true;
-    image = ../../config/wallpapers/zaney-wallpaper.jpg;
+    image = ../../config/wallpapers/sunrise.jpg;
     # base16Scheme = {
     #   base00 = "232136";
     #   base01 = "2a273f";

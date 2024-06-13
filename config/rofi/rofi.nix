@@ -65,7 +65,7 @@
               "dummy"
               "mode-switcher"
             ];
-            background-image = mkLiteral ''url("~/Pictures/Wallpapers/zaney-wallpaper.jpg", width)'';
+            background-image = mkLiteral ''url("~/Pictures/Wallpapers/sunrise.jpg", width)'';
           };
           "entry" = {
             enabled = true;
