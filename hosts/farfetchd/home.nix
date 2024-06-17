@@ -38,12 +38,11 @@ in
     source = ../../config/wlogout;
     recursive = true;
   };
-  home.file.".config/ascii-neofetch".source = ../../config/ascii-neofetch;
   home.file.".face.icon".source = ../../config/face.jpg;
   home.file.".config/face.jpg".source = ../../config/face.jpg;
   home.file.".config/neofetch/config.conf".text = ''
     print_info() {
-      prin "$(color 6)  ZaneyOS $ZANEYOS_VERSION"
+      prin "$(color 6)  FabeanOS $ZANEYOS_VERSION"
       info underline
       info "$(color 7)  VER" kernel
       info "$(color 2)  UP " uptime
@@ -213,7 +212,6 @@ in
         ggpush = "git push origin $(git branch --show-current)";
         gs = "git status";
         ".." = "cd ..";
-        neofetch = "neofetch --ascii ~/.config/ascii-neofetch";
       };
     };
     home-manager.enable = true;

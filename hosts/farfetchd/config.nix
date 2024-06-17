@@ -242,6 +242,7 @@
     calc
     ddev
     discord
+    evince
     ffmpeg
     floorp
     gimp
@@ -307,9 +308,9 @@
     unzip
     v4l-utils
     vhs
-    vscode
     vim
     virt-viewer
+    vscode
     watson
     wget
     wl-clipboard
