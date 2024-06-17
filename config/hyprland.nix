@@ -51,7 +51,7 @@ with lib;
           exec-once = nm-applet --indicator
           exec-once = lxqt-policykit-agent
           exec-once = tailscale-systray
-          exec-once = swww img /home/${username}/Pictures/Wallpapers/sunrise.jpg
+          exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/sunrise.jpg
           monitor=,preferred,auto,1
           ${extraMonitorSettings}
           general {
@@ -86,6 +86,7 @@ with lib;
             workspace_swipe_fingers = 3
           }
           misc {
+            initial_workspace_tracking = 0
             mouse_move_enables_dpms = true
             key_press_enables_dpms = false
           }
@@ -129,9 +130,6 @@ with lib;
           dwindle {
             pseudotile = true
             preserve_split = true
-          }
-          master {
-            new_is_master = true
           }
           bind = ${modifier},Return,exec,${terminal}
           bind = ${modifier}SHIFT,Return,exec,rofi-launcher

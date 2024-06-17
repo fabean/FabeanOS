@@ -242,7 +242,6 @@
     calc
     ddev
     discord
-    eza
     ffmpeg
     floorp
     gimp
@@ -250,7 +249,6 @@
     glow
     gnome.file-roller
     gnome.gnome-boxes
-    gnumake
     greetd.tuigreet
     grim
     gum
@@ -262,13 +260,13 @@
     kubectx
     libnotify
     libreoffice
+    libsForQt5.kdeconnect-kde
     libvirt
     lm_sensors
     lolcat
     lsd
     lshw
     lxqt.lxqt-policykit
-    mangohud
     meson
     mkcert
     mpv
@@ -292,7 +290,6 @@
     prusa-slicer
     qemu
     ripgrep
-    rustup
     slack
     slurp
     socat
@@ -304,7 +301,6 @@
     tailscale-systray
     teams-for-linux
     thunderbird
-    transmission-gtk
     tree
     ungoogled-chromium
     unrar
@@ -321,6 +317,7 @@
     yarn
     ydotool
     youtube-tui
+    zathura
     zellij
     zoom-us
   ];
