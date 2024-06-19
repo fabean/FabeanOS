@@ -239,10 +239,14 @@
     brave
     brightnessctl
     bruno
+    btop
     calc
     ddev
     discord
+    duf
     evince
+    eza
+    fastfetch
     ffmpeg
     floorp
     gimp
@@ -259,19 +263,19 @@
     killall
     kubectl
     kubectx
+    kubernetes-helm
     libnotify
     libreoffice
     libsForQt5.kdeconnect-kde
     libvirt
     lm_sensors
     lolcat
-    lsd
     lshw
     lxqt.lxqt-policykit
     meson
     mkcert
     mpv
-    neofetch
+    ncdu
     neovide
     networkmanagerapplet
     nh
@@ -408,8 +412,8 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    rpcbind.enable = true;
-    nfs.server.enable = true;
+    rpcbind.enable = false;
+    nfs.server.enable = false;
     tailscale = {
       enable = true;
       useRoutingFeatures = "both";
