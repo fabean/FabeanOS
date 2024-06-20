@@ -141,7 +141,7 @@ with lib;
           bind = ${modifier},S,exec,screenshootin
           bind = ${modifier},D,exec,discord
           bind = ${modifier},O,exec,obs
-          bind = ${modifier},C,exec,hyprpicker
+          bind = ${modifier}SHIFT,C,exec,hyprpicker -a
           bind = ${modifier},G,exec,gimp
           bind = ${modifier}SHIFT,G,exec,godot4
           bind = ${modifier},T,exec,thunar
@@ -153,7 +153,7 @@ with lib;
           bind = ${modifier}SHIFT,I,togglesplit,
           bind = ${modifier},F,fullscreen,
           bind = ${modifier}SHIFT,F,togglefloating,
-          bind = ${modifier}SHIFT,C,exit,
+          bind = ${modifier}SHIFT,Q,exit,
           bind = ${modifier}SHIFT,left,movewindow,l
           bind = ${modifier}SHIFT,right,movewindow,r
           bind = ${modifier}SHIFT,up,movewindow,u
