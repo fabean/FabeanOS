@@ -197,7 +197,7 @@ with lib;
           bind = ${modifier},mouse_down,workspace, e+1
           bind = ${modifier},mouse_up,workspace, e-1
           bindm = ${modifier},mouse:272,movewindow
-          bindm = ${modifier},mouse:273,resizeactive
+          bindm = ${modifier},mouse:273,resizewindow
           bind = ALT,Tab,cyclenext
           bind = ALT,Tab,bringactivetotop
           bind = ,XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
