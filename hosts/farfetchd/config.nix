@@ -252,7 +252,7 @@
     gimp
     git
     glow
-    gnome.file-roller
+    file-roller
     gnome.gnome-boxes
     greetd.tuigreet
     grim
@@ -391,7 +391,7 @@
     flatpak.enable = false;
     printing = {
       enable = true;
-      drivers = [ pkgs.hplipWithPlugin ];
+      #drivers = [ pkgs.hplipWithPlugin ];
     };
     gnome.gnome-keyring.enable = true;
     avahi = {
@@ -418,6 +418,7 @@
       enable = true;
       useRoutingFeatures = "both";
     };
+    fwupd.enable = true;
   };
   systemd.services.flatpak-repo = {
     path = [ pkgs.flatpak ];
@@ -501,10 +502,9 @@
   # };
 
   # OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Open ports in the firewall.

@@ -6,7 +6,7 @@
     enable = true;
     extraPackages = [
       pkgs.nodePackages_latest.intelephense
-      pkgs.nodePackages.vscode-css-languageserver-bin
+      pkgs.nodePackages.vscode-langservers-extracted
       pkgs.nodePackages_latest.typescript-language-server
     ];
     languages = {
