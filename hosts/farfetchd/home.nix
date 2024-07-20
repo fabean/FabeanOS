@@ -170,6 +170,27 @@ in
         inactive_tab_font_style bold
       '';
     };
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+        starship init fish | source
+        fastfetch
+      '';
+      shellAliases = {
+        sv = "sudo nvim";
+        fr = "nh os switch --hostname ${host} /home/${username}/Code/fabeanos";
+        fu = "nh os switch --hostname ${host} --update /home/${username}/Code/fabeanos";
+        ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+        v = "nvim";
+        ls = "eza --icons";
+        ll = "eza -lh --icons --grid --group-directories-first";
+        la = "eza -lah --icons --grid --group-directories-first";
+        ggpull = "git pull origin $(git branch --show-current)";
+        ggpush = "git push origin $(git branch --show-current)";
+        gs = "git status";
+      };
+    };
     bash = {
       enable = true;
       enableCompletion = true;

@@ -299,6 +299,7 @@
     slurp
     socat
     spotify
+    starship
     swappy
     swaynotificationcenter
     swww
