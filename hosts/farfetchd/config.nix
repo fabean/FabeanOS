@@ -284,7 +284,7 @@
     nodejs
     obsidian
     openrct2
-    parsec-bin
+    #parsec-bin
     pavucontrol
     pciutils
     php
@@ -446,7 +446,7 @@
   services.hardware.bolt.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  #sound.enable = true;
   hardware.pulseaudio.enable = false;
 
   # Security / Polkit
