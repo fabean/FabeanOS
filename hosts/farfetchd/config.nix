@@ -249,6 +249,7 @@
     fastfetch
     ffmpeg
     floorp
+    gscan2pdf
     gimp
     git
     glow
@@ -431,6 +432,7 @@
     enable = true;
     extraBackends = [ pkgs.sane-airscan ];
     disabledDefaultBackends = [ "escl" ];
+    drivers.scanSnap.enable = true;
   };
 
   # Extra Logitech Support
