@@ -2,6 +2,7 @@
   pkgs,
   username,
   host,
+  lib,
   ...
 }:
 let
@@ -143,6 +144,12 @@ in
           }
         ];
       };
+    };
+    flatpak = {
+      enable = true;
+      packages = [
+        "com.jeffser.Alpaca"
+      ];
     };
   };
 

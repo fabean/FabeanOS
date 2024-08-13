@@ -10,6 +10,7 @@
       url = "github:VonHeikemen/fine-cmdline.nvim";
       flake = false;
     };
+    flatpaks.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
     # This is required for plugin support.
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland-plugins = {
@@ -18,7 +19,7 @@
     # }
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flatpaks, ... }:
     let
       system = "x86_64-linux";
       host = "farfetchd";
@@ -45,7 +46,12 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./hosts/${host}/home.nix;
+              # home-manager.users.${username} = import ;
+              home-manager.users.${username}.imports = [
+                flatpaks.homeManagerModules.nix-flatpak
+                ./hosts/${host}/home.nix
+
+              ];
             }
           ];
         };

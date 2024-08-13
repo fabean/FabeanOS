@@ -279,6 +279,7 @@
     ncdu
     neovide
     networkmanagerapplet
+    ngrok
     nh
     ninja
     nixfmt-rfc-style
@@ -295,6 +296,7 @@
     protonup-qt
     prusa-slicer
     qemu
+    qFlipper
     ripgrep
     slack
     slurp
@@ -390,7 +392,7 @@
     fstrim.enable = true;
     gvfs.enable = true;
     openssh.enable = true;
-    flatpak.enable = false;
+    flatpak.enable = true;
     printing = {
       enable = true;
       #drivers = [ pkgs.hplipWithPlugin ];
