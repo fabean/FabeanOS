@@ -149,6 +149,7 @@ in
       enable = true;
       packages = [
         "com.jeffser.Alpaca"
+        "io.github.zen_browser.zen"
       ];
     };
   };
@@ -196,6 +197,8 @@ in
         ggpull = "git pull origin $(git branch --show-current)";
         ggpush = "git push origin $(git branch --show-current)";
         gs = "git status";
+        mobile-display = "hyprctl keyword monitor 'DP-4, highres, 0x0, 1'";
+        docked-display = "hyprctl keyword monitor 'DP-4, highres, 0x1441, 1'";
       };
     };
     bash = {

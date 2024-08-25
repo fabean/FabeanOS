@@ -136,7 +136,7 @@ with lib;
           bind = ${modifier}SHIFT,W,exec,web-search
           bind = ${modifier}ALT,W,exec,wallsetter
           bind = ${modifier}SHIFT,N,exec,swaync-client -rs
-          bind = ${modifier},W,exec,${browser}
+          bind = ${modifier},W,exec,io.github.zen_browser.zen
           bind = ${modifier},E,exec,emopicker9000
           bind = ${modifier},S,exec,screenshootin
           bind = ${modifier},D,exec,discord

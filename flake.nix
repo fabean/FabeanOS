@@ -11,6 +11,10 @@
       flake = false;
     };
     flatpaks.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # This is required for plugin support.
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland-plugins = {
@@ -19,7 +23,7 @@
     # }
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, flatpaks, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flatpaks, nixos-cosmic, ... }:
     let
       system = "x86_64-linux";
       host = "farfetchd";
@@ -34,6 +38,13 @@
             inherit host;
           };
           modules = [
+            {
+              nix.settings = {
+                substituters = [ "https://cosmic.cachix.org/" ];
+                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+              };
+            }
+            nixos-cosmic.nixosModules.default
             ./hosts/${host}/config.nix
             inputs.stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
