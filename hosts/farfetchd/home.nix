@@ -197,8 +197,8 @@ in
         ggpull = "git pull origin $(git branch --show-current)";
         ggpush = "git push origin $(git branch --show-current)";
         gs = "git status";
-        mobile-display = "hyprctl keyword monitor 'DP-4, highres, 0x0, 1'";
-        docked-display = "hyprctl keyword monitor 'DP-4, highres, 0x1441, 1'";
+        mobile-display = "hyprctl keyword monitor 'DP-4, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
+        docked-display = "hyprctl keyword monitor 'DP-4, highres, 0x1441, 1' && hyprctl keyword monitor 'eDP-1, highres,3441x1441,1'";
       };
     };
     bash = {

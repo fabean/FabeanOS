@@ -233,7 +233,7 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     audacity
-#    awscli2
+    awscli2
     beekeeper-studio
     beeper
     brave
@@ -249,12 +249,13 @@
     fastfetch
     ffmpeg
     floorp
+    gdu
     gscan2pdf
     gimp
     git
     glow
     file-roller
-    gnome.gnome-boxes
+    gnome-boxes
     greetd.tuigreet
     grim
     gum
