@@ -4,6 +4,7 @@
   # Configure Helix
   programs.helix = {
     enable = true;
+    defaultEditor = true;
     extraPackages = [
       pkgs.nodePackages_latest.intelephense
       pkgs.nodePackages.vscode-langservers-extracted

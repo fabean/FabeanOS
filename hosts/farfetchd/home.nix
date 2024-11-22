@@ -197,7 +197,9 @@ in
         ggpull = "git pull origin $(git branch --show-current)";
         ggpush = "git push origin $(git branch --show-current)";
         gs = "git status";
+        lando = "node /home/josh/Code/lando-cli/bin/lando";
         mobile-display = "hyprctl keyword monitor 'DP-4, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
+        mobile-display-alt = "hyprctl keyword monitor 'DP-2, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
         docked-display = "hyprctl keyword monitor 'DP-4, highres, 0x1441, 1' && hyprctl keyword monitor 'eDP-1, highres,3441x1441,1'";
       };
     };
@@ -241,14 +243,15 @@ in
           hide_cursor = true;
           no_fade_in = false;
         };
-        background = [
+        background = lib.mkForce [
           {
-            path = "/home/${username}/Pictures/Wallpapers/sunrise.jpg";
             blur_passes = 3;
             blur_size = 8;
+            path = "/home/josh/Pictures/Wallpapers/sunrise.jpg";
+            # ... rest of your background settings ...
           }
         ];
-        image = [
+        image = lib.mkForce [
           {
             path = "/home/${username}/.config/face.jpg";
             size = 150;
@@ -260,7 +263,7 @@ in
             valign = "center";
           }
         ];
-        input-field = [
+        input-field = lib.mkForce [
           {
             size = "200, 50";
             position = "0, -80";

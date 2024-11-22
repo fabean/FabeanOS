@@ -239,6 +239,7 @@
     brave
     brightnessctl
     bruno
+    boxbuddy
     btop
     calc
     ddev
@@ -255,6 +256,7 @@
     git
     glow
     file-roller
+    gpu-screen-recorder-gtk
     gnome-boxes
     greetd.tuigreet
     grim
@@ -262,6 +264,8 @@
     htop
     hyprpicker
     imv
+    kdenlive
+    shotcut
     killall
     kubectl
     kubectx
@@ -278,7 +282,6 @@
     mkcert
     mpv
     ncdu
-    neovide
     networkmanagerapplet
     ngrok
     nh
@@ -316,6 +319,7 @@
     unrar
     unzip
     v4l-utils
+    ventoy-full
     vhs
     vim
     virt-viewer
@@ -336,7 +340,7 @@
   fonts = {
     packages = with pkgs; [
       noto-fonts-emoji
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       font-awesome
       symbola
       material-icons
@@ -429,7 +433,10 @@
       cosmic.enable = true;
 #      plasma6.enable = true;
     };
-    #displayManager.cosmic-greeter.enable = true;
+    # dnsmasq = {
+    #   enable = true;
+    #   addresses = [ "local = 127.0.0.1" ];
+    # };
   };
   systemd.services.flatpak-repo = {
     path = [ pkgs.flatpak ];
@@ -522,13 +529,16 @@
   };
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-  networking.firewall.allowedTCPPorts = [ 8384 22000 9003 5432 ];
-  ## Syncthing
-  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
+  networking = {
+    firewall = {
+      allowedTCPPorts = [ 8384 22000 9003 5432 ];
+      allowedUDPPorts = [ 22000 21027 ];
+    };
+    extraHosts = ''
+      127.0.0.1 riversource.dev.local
+      127.0.0.1 flask-ampri.dev.local
+      '';
+  };
   environment.etc.hosts.mode = "0644";
 
   # This value determines the NixOS release from which the default
