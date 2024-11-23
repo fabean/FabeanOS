@@ -114,7 +114,6 @@ with lib;
           }
           decoration {
             rounding = 10
-            drop_shadow = false
             blur {
                 enabled = true
                 size = 5
