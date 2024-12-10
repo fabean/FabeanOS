@@ -74,7 +74,7 @@
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+        package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
@@ -537,6 +537,7 @@
     extraHosts = ''
       127.0.0.1 riversource.dev.local
       127.0.0.1 flask-ampri.dev.local
+      127.0.0.1 api.cmhprotector.dev.local
       '';
   };
   environment.etc.hosts.mode = "0644";
