@@ -42,7 +42,7 @@
       },
       {
           "type": "custom",
-          "format": "\u001b[31m OS -> ZaneyOS 2.2"
+          "format": "\u001b[31m OS -> FabeanOS"
       },
       {
           "type": "kernel",

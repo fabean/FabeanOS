@@ -249,6 +249,7 @@
     eza
     fastfetch
     ffmpeg
+    filezilla
     floorp
     gdu
     gscan2pdf
@@ -411,7 +412,7 @@
     };
     ipp-usb.enable = true;
     syncthing = {
-      enable = false;
+      enable = true;
       user = "${username}";
       dataDir = "/home/${username}";
       configDir = "/home/${username}/.config/syncthing";
