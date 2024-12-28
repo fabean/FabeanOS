@@ -239,9 +239,10 @@
     brave
     brightnessctl
     bruno
-    boxbuddy
+    #boxbuddy
     btop
     calc
+    code-cursor
     ddev
     discord
     duf
@@ -250,7 +251,6 @@
     fastfetch
     ffmpeg
     filezilla
-    floorp
     gdu
     gscan2pdf
     gimp
@@ -291,17 +291,15 @@
     nodejs
     obsidian
     openrct2
-    #parsec-bin
     pavucontrol
     pciutils
     php
-    php82Packages.composer
+    php83Packages.composer
     pkg-config
     playerctl
     protonup-qt
     prusa-slicer
     qemu
-    qFlipper
     ripgrep
     slack
     slurp
@@ -332,7 +330,6 @@
     yad
     yarn
     ydotool
-    youtube-tui
     zathura
     zellij
     zoom-us
@@ -351,6 +348,7 @@
   environment.variables = {
     ZANEYOS_VERSION = "2.2";
     ZANEYOS = "true";
+    TERM = "xterm-256color";
   };
 
   # Extra Portal Configuration

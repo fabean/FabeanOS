@@ -146,7 +146,7 @@ with lib;
           bind = ${modifier},T,exec,thunar
           bind = ${modifier},M,exec,spotify
           bind = ${modifier},C,exec,slack
-          bind = ${modifier},V,exec,code
+          bind = ${modifier},V,exec,cursor
           bind = ${modifier},Q,killactive,
           bind = ${modifier},P,pseudo,
           bind = ${modifier}SHIFT,I,togglesplit,
