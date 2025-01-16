@@ -265,6 +265,7 @@
     htop
     hyprpicker
     imv
+    jellyfin-media-player
     kdenlive
     shotcut
     killall
@@ -330,6 +331,7 @@
     yad
     yarn
     ydotool
+    zed-editor
     zathura
     zellij
     zoom-us
