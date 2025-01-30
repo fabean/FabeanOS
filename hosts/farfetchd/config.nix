@@ -234,6 +234,7 @@
     appimage-run
     audacity
     awscli2
+    bat
     beekeeper-studio
     beeper
     brave
@@ -243,12 +244,16 @@
     btop
     calc
     code-cursor
+    cheese
+    ctop
     ddev
     discord
+    dogdns
     duf
     evince
     eza
     fastfetch
+    fishPlugins.bass
     ffmpeg
     filezilla
     gdu
@@ -268,10 +273,13 @@
     jellyfin-media-player
     kdenlive
     shotcut
+    k9s
+    kdash
     killall
     kubectl
     kubectx
     kubernetes-helm
+    ktop
     libnotify
     libreoffice
     libsForQt5.kdeconnect-kde
@@ -290,6 +298,7 @@
     ninja
     nixfmt-rfc-style
     nodejs
+    corepack
     obsidian
     openrct2
     pavucontrol
@@ -305,6 +314,7 @@
     slack
     slurp
     socat
+    sparrow
     spotify
     starship
     swappy
@@ -351,6 +361,7 @@
     ZANEYOS_VERSION = "2.2";
     ZANEYOS = "true";
     TERM = "xterm-256color";
+    COREPACK_ENABLE = "1";
   };
 
   # Extra Portal Configuration

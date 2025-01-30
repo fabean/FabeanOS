@@ -21,6 +21,7 @@ in
         "lp"
         "docker"
         "dialout"
+        "video"
       ];
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;

@@ -198,9 +198,10 @@ in
         ggpush = "git push origin $(git branch --show-current)";
         gs = "git status";
         lando = "node /home/josh/Code/lando-cli/bin/lando";
+        cat = "bat";
         mobile-display = "hyprctl keyword monitor 'DP-4, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
         mobile-display-alt = "hyprctl keyword monitor 'DP-2, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
-        docked-display = "hyprctl keyword monitor 'DP-4, highres, 0x1441, 1' && hyprctl keyword monitor 'eDP-1, highres,3441x1441,1'";
+        docked-display = "hyprctl keyword monitor 'DP-4, highres, 0x0, 1' && hyprctl keyword monitor 'DP-2, highres, 0x1441, 1' && hyprctl keyword monitor 'eDP-1, highres,3441x1441,1'";
       };
     };
     bash = {
