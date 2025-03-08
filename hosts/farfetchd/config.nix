@@ -130,7 +130,6 @@
   };
 
   programs = {
-    firefox.enable = true;
     starship = {
       enable = true;
       settings = {
@@ -334,6 +333,7 @@
     vim
     virt-viewer
     virt-manager
+    vivaldi
     vscode
     watson
     wget
@@ -361,7 +361,6 @@
     ZANEYOS_VERSION = "2.2";
     ZANEYOS = "true";
     TERM = "xterm-256color";
-    COREPACK_ENABLE = "1";
   };
 
   # Extra Portal Configuration
