@@ -4,6 +4,7 @@
   host,
   username,
   options,
+  inputs,
   ...
 }:
 
@@ -342,6 +343,8 @@
     yarn
     ydotool
     zed-editor
+    # zen-browser
+    inputs.zen-browser.packages."${system}".default
     zathura
     zellij
     zoom-us
