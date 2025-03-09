@@ -52,6 +52,7 @@ with lib;
           exec-once = lxqt-policykit-agent
           exec-once = tailscale-systray
           exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/sunrise.jpg
+          exec-once = hypridle
           monitor=,preferred,auto,1
           ${extraMonitorSettings}
           general {
@@ -89,6 +90,12 @@ with lib;
             initial_workspace_tracking = 0
             mouse_move_enables_dpms = true
             key_press_enables_dpms = false
+            disable_hyprland_logo = true
+            # disable_splash_rendering = true
+            # Lock screen when laptop lid is closed
+            enable_swallow = true
+            swallow_regex = ^(${terminal})$
+            focus_on_activate = true
           }
           animations {
             enabled = yes

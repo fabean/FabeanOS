@@ -127,20 +127,21 @@ in
           after_sleep_cmd = "hyprctl dispatch dpms on";
           ignore_dbus_inhibit = false;
           lock_cmd = "hyprlock";
-          starship = {
-            enable = true;
-            package = pkgs.starship;
-          };
+
         };
         listener = [
           {
-            timeout = 900;
+            timeout = 300;
             on-timeout = "hyprlock";
           }
           {
             timeout = 1200;
             on-timeout = "hyprctl dispatch dpms off";
             on-resume = "hyprctl dispatch dpms on";
+          }
+          {
+            on-lid-closed = "hyprlock";
+            on-lid-opened = "hyprctl dispatch dpms on";
           }
         ];
       };
@@ -240,16 +241,17 @@ in
       settings = {
         general = {
           disable_loading_bar = true;
-          grace = 10;
+          grace = 0;
           hide_cursor = true;
           no_fade_in = false;
+          no_unlock_animation = false;
+          ignore_empty_input = false;
         };
         background = lib.mkForce [
           {
             blur_passes = 3;
             blur_size = 8;
             path = "/home/josh/Pictures/Wallpapers/sunrise.jpg";
-            # ... rest of your background settings ...
           }
         ];
         image = lib.mkForce [
@@ -277,6 +279,11 @@ in
             outline_thickness = 5;
             placeholder_text = "Password...";
             shadow_passes = 2;
+            check_color = "rgb(0C96F9)";
+            fail_color = "rgb(FF0000)";
+            capslock_color = "rgb(F9A80C)";
+            password_input = true;
+            swap_input_on_fail = true;
           }
         ];
       };
