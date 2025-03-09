@@ -122,12 +122,12 @@ in
 
   services = {
     hypridle = {
+      enable = true;
       settings = {
         general = {
-          after_sleep_cmd = "hyprctl dispatch dpms on";
-          ignore_dbus_inhibit = false;
           lock_cmd = "hyprlock";
-
+          before_sleep_cmd = "hyprlock";
+          after_sleep_cmd = "hyprctl dispatch dpms on";
         };
         listener = [
           {
@@ -140,8 +140,8 @@ in
             on-resume = "hyprctl dispatch dpms on";
           }
           {
-            on-lid-closed = "hyprlock";
-            on-lid-opened = "hyprctl dispatch dpms on";
+            on-lid-close = "hyprlock";
+            on-lid-open = "hyprctl dispatch dpms on";
           }
         ];
       };
