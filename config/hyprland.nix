@@ -53,6 +53,7 @@ with lib;
           exec-once = tailscale-systray
           exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/sunrise.jpg
           exec-once = hypridle
+          exec-once = pypr
           monitor=,preferred,auto,1
           ${extraMonitorSettings}
           general {
@@ -77,11 +78,95 @@ with lib;
             accel_profile = flat
             scroll_factor = 0.2
           }
-          windowrule = noborder,^(wofi)$
-          windowrule = center,^(wofi)$
-          windowrule = center,^(steam)$
-          windowrulev2 = stayfocused, title:^()$,class:^(steam)$
-          windowrulev2 = minsize 1 1, title:^()$,class:^(steam)$
+
+          # Window Tags
+          windowrulev2 = tag +file-manager, class:^([Tt]hunar|org.gnome.Nautilus|[Pp]cmanfm-qt)$
+          windowrulev2 = tag +terminal, class:^(Alacritty|kitty|kitty-dropterm)$
+          windowrulev2 = tag +browser, class:^(Brave-browser(-beta|-dev|-unstable)?)$
+          windowrulev2 = tag +browser, class:^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr)$
+          windowrulev2 = tag +browser, class:^([Gg]oogle-chrome(-beta|-dev|-unstable)?)$
+          windowrulev2 = tag +browser, class:^([Tt]horium-browser|[Cc]achy-browser)$
+          windowrulev2 = tag +projects, class:^(codium|codium-url-handler|VSCodium)$
+          windowrulev2 = tag +projects, class:^(VSCode|code-url-handler)$
+          windowrulev2 = tag +im, class:^([Dd]iscord|[Ww]ebCord|[Vv]esktop)$
+          windowrulev2 = tag +im, class:^([Ff]erdium)$
+          windowrulev2 = tag +im, class:^([Ww]hatsapp-for-linux)$
+          windowrulev2 = tag +im, class:^(org.telegram.desktop|io.github.tdesktop_x64.TDesktop)$
+          windowrulev2 = tag +im, class:^(teams-for-linux)$
+          windowrulev2 = tag +games, class:^(gamescope)$
+          windowrulev2 = tag +games, class:^(steam_app_\d+)$
+          windowrulev2 = tag +gamestore, class:^([Ss]team)$
+          windowrulev2 = tag +gamestore, title:^([Ll]utris)$
+          windowrulev2 = tag +gamestore, class:^(com.heroicgameslauncher.hgl)$
+          windowrulev2 = tag +settings, class:^(gnome-disks|wihotspot(-gui)?)$
+          windowrulev2 = tag +settings, class:^([Rr]ofi)$
+          windowrulev2 = tag +settings, class:^(file-roller|org.gnome.FileRoller)$
+          windowrulev2 = tag +settings, class:^(nm-applet|nm-connection-editor|blueman-manager)$
+          windowrulev2 = tag +settings, class:^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$
+          windowrulev2 = tag +settings, class:^(nwg-look|qt5ct|qt6ct|[Yy]ad)$
+          windowrulev2 = tag +settings, class:(xdg-desktop-portal-gtk)
+
+          # Window Position
+          windowrulev2 = move 72% 7%,title:^(Picture-in-Picture)$
+          windowrulev2 = move 72% 7%,title:^(Picture in picture)$
+          windowrulev2 = center, class:^([Ff]erdium)$
+          windowrulev2 = center, class:^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$
+          windowrulev2 = center, class:([Tt]hunar), title:negative:(.*[Tt]hunar.*)
+          windowrulev2 = center, title:^(Authentication Required)$
+
+          # Window Idle
+          windowrulev2 = idleinhibit fullscreen, class:^(*)$
+          windowrulev2 = idleinhibit fullscreen, title:^(*)$
+          windowrulev2 = idleinhibit fullscreen, fullscreen:1
+
+          # Window Float
+          windowrulev2 = float, tag:settings*
+          windowrulev2 = float, class:^([Ff]erdium)$
+          windowrulev2 = float, title:^(Picture-in-Picture)$
+          windowrulev2 = float, title:^(Picture in picture)$
+          windowrulev2 = float, class:^(mpv|com.github.rafostar.Clapper)$
+          windowrulev2 = float, title:^(Authentication Required)$
+          windowrulev2 = float, class:(codium|codium-url-handler|VSCodium), title:negative:(.*codium.*|.*VSCodium.*)
+          windowrulev2 = float, class:^(com.heroicgameslauncher.hgl)$, title:negative:(Heroic Games Launcher)
+          windowrulev2 = float, class:^([Ss]team)$, title:negative:^([Ss]team)$
+          windowrulev2 = float, class:([Tt]hunar), title:negative:(.*[Tt]hunar.*)
+          windowrulev2 = float, initialTitle:(Add Folder to Workspace)
+          windowrulev2 = float, initialTitle:(Open Files)
+
+          # Window Size
+          windowrulev2 = size 70% 60%, initialTitle:(Open Files)
+          windowrulev2 = size 70% 60%, initialTitle:(Add Folder to Workspace)
+          windowrulev2 = size 70% 70%, tag:settings*
+          windowrulev2 = size 60% 70%, class:^([Ff]erdium)$
+
+          # Window Opacity
+          windowrulev2 = opacity 1.0 1.0, tag:browser*
+          windowrulev2 = opacity 0.9 0.8, tag:projects*
+          windowrulev2 = opacity 0.94 0.86, tag:im*
+          windowrulev2 = opacity 0.9 0.8, tag:file-manager*
+          windowrulev2 = opacity 0.8 0.7, tag:terminal*
+          windowrulev2 = opacity 0.8 0.7, tag:settings*
+          windowrulev2 = opacity 0.8 0.7, class:^(gedit|org.gnome.TextEditor|mousepad)$
+          windowrulev2 = opacity 0.9 0.8, class:^(seahorse)$ # gnome-keyring gui
+          windowrulev2 = opacity 0.95 0.75, title:^(Picture-in-Picture)$
+          windowrulev2 = opacity 0.95 0.75, title:^(Picture in picture)$
+
+
+          # Window Pinning
+          windowrulev2 = pin, title:^(Picture-in-Picture)$
+          windowrulev2 = pin, title:^(Picture in picture)$
+
+          # Window Extras
+          windowrulev2 = keepaspectratio, title:^(Picture-in-Picture)$
+          windowrulev2 = noblur, tag:games*
+          windowrulev2 = fullscreen, tag:games*
+
+          # LAYER RULES
+          layerrule = blur, rofi
+          layerrule = ignorezero, rofi
+          layerrule = blur, notifications
+          layerrule = ignorezero, notifications
+
           gestures {
             workspace_swipe = true
             workspace_swipe_fingers = 3
@@ -150,12 +235,14 @@ with lib;
           bind = ${modifier}SHIFT,C,exec,hyprpicker -a
           bind = ${modifier},G,exec,gimp
           bind = ${modifier}SHIFT,G,exec,godot4
-          bind = ${modifier},T,exec,thunar
+          bind = ${modifier},T,exec,pypr toggle term
+          bind = ${modifier}SHIFT,T,exec,pypr toggle thunar
           bind = ${modifier},M,exec,spotify
           bind = ${modifier},C,exec,slack
           bind = ${modifier},V,exec,cursor
           bind = ${modifier},Q,killactive,
-          bind = ${modifier},P,pseudo,
+          bind = ${modifier},P,exec,pypr toggle volume
+          bind = ${modifier},B,exec,pypr toggle bluetooth
           bind = ${modifier}SHIFT,I,togglesplit,
           bind = ${modifier},F,fullscreen,
           bind = ${modifier}SHIFT,F,togglefloating,

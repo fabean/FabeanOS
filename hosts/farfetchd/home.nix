@@ -26,6 +26,7 @@ in
     ../../config/waybar.nix
     ../../config/wlogout.nix
     ../../config/helix.nix
+    ../../config/pyprland.nix
   ];
 
   # Place Files Inside Home Directory
@@ -150,7 +151,6 @@ in
       enable = true;
       packages = [
         "com.jeffser.Alpaca"
-        "app.zen_browser.zen"
       ];
     };
   };

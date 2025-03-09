@@ -75,7 +75,7 @@
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
         name = "DejaVu Sans Mono";
       };
       sansSerif = {
@@ -478,7 +478,6 @@
   services.hardware.bolt.enable = true;
 
   # Enable sound with pipewire.
-  #sound.enable = true;
   hardware.pulseaudio.enable = false;
 
   # Security / Polkit
