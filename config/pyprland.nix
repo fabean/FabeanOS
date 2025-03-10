@@ -23,8 +23,8 @@
 
     [scratchpads.bluetooth]
     animation = "fromTop"
-    command = "blueman"
-    class = "blueman"
+    command = "blueman-manager"
+    class = "blueman-manager-wrapped"
     lazy = true
     size = "40% 90%"
 

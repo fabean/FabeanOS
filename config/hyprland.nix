@@ -103,6 +103,7 @@ with lib;
           windowrulev2 = tag +settings, class:^(file-roller|org.gnome.FileRoller)$
           windowrulev2 = tag +settings, class:^(nm-applet|nm-connection-editor|blueman-manager)$
           windowrulev2 = tag +settings, class:^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$
+          windowrulev2 = tag +settings, class:^(blueman-manager)$
           windowrulev2 = tag +settings, class:^(nwg-look|qt5ct|qt6ct|[Yy]ad)$
           windowrulev2 = tag +settings, class:(xdg-desktop-portal-gtk)
 
@@ -111,6 +112,7 @@ with lib;
           windowrulev2 = move 72% 7%,title:^(Picture in picture)$
           windowrulev2 = center, class:^([Ff]erdium)$
           windowrulev2 = center, class:^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$
+          windowrulev2 = center, class:^(blueman-manager)$
           windowrulev2 = center, class:([Tt]hunar), title:negative:(.*[Tt]hunar.*)
           windowrulev2 = center, title:^(Authentication Required)$
 
@@ -227,7 +229,7 @@ with lib;
           bind = ${modifier}SHIFT,W,exec,web-search
           bind = ${modifier}ALT,W,exec,wallsetter
           bind = ${modifier}SHIFT,N,exec,swaync-client -rs
-          bind = ${modifier},W,exec,app.zen_browser.zen
+          bind = ${modifier},W,exec,zen
           bind = ${modifier},E,exec,emopicker9000
           bind = ${modifier},S,exec,screenshootin
           bind = ${modifier},D,exec,discord
@@ -243,6 +245,7 @@ with lib;
           bind = ${modifier},Q,killactive,
           bind = ${modifier},P,exec,pypr toggle volume
           bind = ${modifier},B,exec,pypr toggle bluetooth
+          bind = ${modifier}SHIFT,B,exec,~/Applications/Beeper-4.0.494.AppImage
           bind = ${modifier}SHIFT,I,togglesplit,
           bind = ${modifier},F,fullscreen,
           bind = ${modifier}SHIFT,F,togglefloating,
