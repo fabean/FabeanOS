@@ -36,9 +36,11 @@ in {
         repeat_delay = 300;
         follow_mouse = 1;
         sensitivity = 0;
+        accel_profile = "flat";
+        scroll_factor = 0.2;
         touchpad = {
           natural_scroll = true;
-          disable_while_typing = true;
+          clickfinger_behavior = true;
           scroll_factor = 0.2;
           tap-to-click = false;
         };
