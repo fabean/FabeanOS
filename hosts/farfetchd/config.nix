@@ -273,6 +273,8 @@
     jellyfin-media-player
     kdenlive
     shotcut
+    superfile
+    stepmania
     k9s
     kdash
     killall
@@ -298,6 +300,7 @@
     ninja
     nixfmt-rfc-style
     nodejs
+    nostui
     corepack
     obsidian
     openrct2

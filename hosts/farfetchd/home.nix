@@ -17,7 +17,7 @@ in
   # Import Program Configurations
   imports = [
     ../../config/emoji.nix
-    ../../config/hyprland.nix
+    ../../config/hyprland/default.nix
     ../../config/neovim.nix
     ../../config/rofi/rofi.nix
     ../../config/rofi/config-emoji.nix
@@ -26,14 +26,14 @@ in
     ../../config/waybar.nix
     ../../config/wlogout.nix
     ../../config/helix.nix
-    ../../config/pyprland.nix
+    # ../../config/pyprland.nix
   ];
 
   # Place Files Inside Home Directory
-  home.file."Pictures/Wallpapers" = {
-    source = ../../config/wallpapers;
-    recursive = true;
-  };
+  # home.file."Pictures/Wallpapers" = {
+  #   source = ../../config/wallpapers;
+  #   recursive = true;
+  # };
   home.file.".config/fastfetch" = {
     source = ../../config/fastfetch;
     recursive = true;
@@ -42,20 +42,20 @@ in
     source = ../../config/wlogout;
     recursive = true;
   };
-  home.file.".face.icon".source = ../../config/face.jpg;
-  home.file.".config/face.jpg".source = ../../config/face.jpg;
-  home.file.".config/swappy/config".text = ''
-    [Default]
-    save_dir=/home/${username}/Pictures/Screenshots
-    save_filename_format=swappy-%Y%m%d-%H%M%S.png
-    show_panel=false
-    line_size=5
-    text_size=20
-    text_font=Ubuntu
-    paint_mode=brush
-    early_exit=true
-    fill_shape=false
-  '';
+  # home.file.".face.icon".source = ../../config/face.jpg;
+  # home.file.".config/face.jpg".source = ../../config/face.jpg;
+  # home.file.".config/swappy/config".text = ''
+  #   [Default]
+  #   save_dir=/home/${username}/Pictures/Screenshots
+  #   save_filename_format=swappy-%Y%m%d-%H%M%S.png
+  #   show_panel=false
+  #   line_size=5
+  #   text_size=20
+  #   text_font=Ubuntu
+  #   paint_mode=brush
+  #   early_exit=true
+  #   fill_shape=false
+  # '';
 
   # Install & Configure Git
   programs.git = {
@@ -122,31 +122,6 @@ in
   ];
 
   services = {
-    hypridle = {
-      enable = true;
-      settings = {
-        general = {
-          lock_cmd = "hyprlock";
-          before_sleep_cmd = "hyprlock";
-          after_sleep_cmd = "hyprctl dispatch dpms on";
-        };
-        listener = [
-          {
-            timeout = 300;
-            on-timeout = "hyprlock";
-          }
-          {
-            timeout = 1200;
-            on-timeout = "hyprctl dispatch dpms off";
-            on-resume = "hyprctl dispatch dpms on";
-          }
-          {
-            on-lid-close = "hyprlock";
-            on-lid-open = "hyprctl dispatch dpms on";
-          }
-        ];
-      };
-    };
     flatpak = {
       enable = true;
       packages = [
@@ -236,57 +211,57 @@ in
       };
     };
     home-manager.enable = true;
-    hyprlock = {
-      enable = true;
-      settings = {
-        general = {
-          disable_loading_bar = true;
-          grace = 0;
-          hide_cursor = true;
-          no_fade_in = false;
-          no_unlock_animation = false;
-          ignore_empty_input = false;
-        };
-        background = lib.mkForce [
-          {
-            blur_passes = 3;
-            blur_size = 8;
-            path = "/home/josh/Pictures/Wallpapers/sunrise.jpg";
-          }
-        ];
-        image = lib.mkForce [
-          {
-            path = "/home/${username}/.config/face.jpg";
-            size = 150;
-            border_size = 4;
-            border_color = "rgb(0C96F9)";
-            rounding = -1; # Negative means circle
-            position = "0, 200";
-            halign = "center";
-            valign = "center";
-          }
-        ];
-        input-field = lib.mkForce [
-          {
-            size = "200, 50";
-            position = "0, -80";
-            monitor = "";
-            dots_center = true;
-            fade_on_empty = false;
-            font_color = "rgb(CFE6F4)";
-            inner_color = "rgb(657DC2)";
-            outer_color = "rgb(0D0E15)";
-            outline_thickness = 5;
-            placeholder_text = "Password...";
-            shadow_passes = 2;
-            check_color = "rgb(0C96F9)";
-            fail_color = "rgb(FF0000)";
-            capslock_color = "rgb(F9A80C)";
-            password_input = true;
-            swap_input_on_fail = true;
-          }
-        ];
-      };
-    };
+    # hyprlock = {
+    #   enable = true;
+    #   settings = {
+    #     general = {
+    #       disable_loading_bar = true;
+    #       grace = 0;
+    #       hide_cursor = true;
+    #       no_fade_in = false;
+    #       no_unlock_animation = false;
+    #       ignore_empty_input = false;
+    #     };
+    #     background = lib.mkForce [
+    #       {
+    #         blur_passes = 3;
+    #         blur_size = 8;
+    #         path = "/home/josh/Pictures/Wallpapers/sunrise.jpg";
+    #       }
+    #     ];
+    #     image = lib.mkForce [
+    #       {
+    #         path = "/home/${username}/.config/face.jpg";
+    #         size = 150;
+    #         border_size = 4;
+    #         border_color = "rgb(0C96F9)";
+    #         rounding = -1; # Negative means circle
+    #         position = "0, 200";
+    #         halign = "center";
+    #         valign = "center";
+    #       }
+    #     ];
+    #     input-field = lib.mkForce [
+    #       {
+    #         size = "200, 50";
+    #         position = "0, -80";
+    #         monitor = "";
+    #         dots_center = true;
+    #         fade_on_empty = false;
+    #         font_color = "rgb(CFE6F4)";
+    #         inner_color = "rgb(657DC2)";
+    #         outer_color = "rgb(0D0E15)";
+    #         outline_thickness = 5;
+    #         placeholder_text = "Password...";
+    #         shadow_passes = 2;
+    #         check_color = "rgb(0C96F9)";
+    #         fail_color = "rgb(FF0000)";
+    #         capslock_color = "rgb(F9A80C)";
+    #         password_input = true;
+    #         swap_input_on_fail = true;
+    #       }
+    #     ];
+    #   };
+    # };
   };
 }
