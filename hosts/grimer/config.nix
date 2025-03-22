@@ -145,31 +145,20 @@
   environment.systemPackages = with pkgs; [
     btop
     ctop
-    dogdns
-    duf
     eza
     fastfetch
     fishPlugins.bass
     ffmpeg
     gdu
     git
-    gum
     htop
     superfile
-    k9s
-    kdash
-    killall
-    kubectl
-    kubectx
-    kubernetes-helm
-    ktop
     lm_sensors
     mkcert
     nh    
     pciutils
     pkg-config
     tailscale
-    tree
     unrar
     unzip
     vim
