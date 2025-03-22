@@ -34,11 +34,6 @@
     # plymouth.enable = true;
   };
 
-
-  drivers.intel.enable = true;
-  vm.guest-services.enable = false;
-  local.hardware-clock.enable = false;
-
   # Enable networking
   networking.networkmanager.enable = true;
   networking.hostName = host;
