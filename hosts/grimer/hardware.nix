@@ -8,26 +8,24 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "amdgpu.sg_display=0" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/009a90e6-d690-4dc1-8369-c1c146642766";
+    { device = "/dev/disk/by-uuid/1f8fb738-cd2c-4b50-8d4a-4d6960b77a95";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-fb832238-d182-4333-894a-521aa8779928".device = "/dev/disk/by-uuid/fb832238-d182-4333-894a-521aa8779928";
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/0A2B-5BB2";
+    { device = "/dev/disk/by-uuid/3D77-253A";
       fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/22c7c189-ba8a-4330-b798-613d760ada8f"; }
+    [ { device = "/dev/disk/by-uuid/84592922-e019-4eaf-b3dc-1ec0456a44ab"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -35,18 +33,8 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-06b01a2ff1d0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-107bebe3df74.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-440ccbda9619.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-50cf616773d2.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-791f8849f478.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-ae8fb1adb14d.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-b30a36c1260d.useDHCP = lib.mkDefault true;
-  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.veth1d36b22.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
