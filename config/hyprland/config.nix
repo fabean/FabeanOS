@@ -173,6 +173,10 @@ in {
         "keepaspectratio, title:^(Picture in picture)$"
         "noblur, tag:games*"
         "fullscreen, tag:games*"
+        "opacity 1 1, class:^(ulauncher)$"
+        "noborder, class:^(ulauncher)$"
+        "noblur, class:^(ulauncher)$"
+        "noshadow, class:^(ulauncher)$"
       ];
 
       env = [
