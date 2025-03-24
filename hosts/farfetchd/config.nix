@@ -235,12 +235,12 @@
     audacity
     awscli2
     bat
+    bitwarden-cli
     beekeeper-studio
     beeper
     brave
     brightnessctl
     bruno
-    #boxbuddy
     btop
     calc
     code-cursor
@@ -326,11 +326,11 @@
     tailscale
     tailscale-systray
     teams-for-linux
-    thunderbird
     tree
     ungoogled-chromium
     unrar
     unzip
+    ulauncher
     v4l-utils
     ventoy-full
     vhs

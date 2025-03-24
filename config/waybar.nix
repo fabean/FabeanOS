@@ -22,7 +22,6 @@ with lib;
         position = "top";
         modules-center = [ "hyprland/workspaces" ];
         modules-left = [
-          "custom/startmenu"
           "hyprland/window"
           "pulseaudio"
           "cpu"
@@ -199,7 +198,7 @@ with lib;
           min-height: 0px;
         }
         window#waybar {
-          background: #${config.stylix.base16Scheme.base00};
+          background: transparent;
         }
         #workspaces {
           color: #${config.stylix.base16Scheme.base00};
