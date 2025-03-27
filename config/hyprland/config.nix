@@ -23,6 +23,7 @@ in {
         "tailscale-systray"
         "pypr &"
         "hypridle"
+        "ulauncher"
         "sleep .5 && swww img /home/${username}/Pictures/Wallpapers/sunrise.jpg"
       ];
 
