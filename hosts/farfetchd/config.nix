@@ -340,6 +340,7 @@
     vivaldi
     vscode
     watson
+    wezterm
     wget
     wl-clipboard
     yad
