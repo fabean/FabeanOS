@@ -26,6 +26,7 @@ in
     ../../config/waybar.nix
     ../../config/wlogout.nix
     ../../config/helix.nix
+    ../../config/kitty.nix
     # ../../config/pyprland.nix
   ];
 
@@ -138,22 +139,24 @@ in
         vim_keys = true;
       };
     };
-    kitty = {
-      enable = true;
-      package = pkgs.kitty;
-      settings = {
-        scrollback_lines = 2000;
-        wheel_scroll_min_lines = 1;
-        window_padding_width = 4;
-        confirm_os_window_close = 0;
-      };
-      extraConfig = ''
-        tab_bar_style fade
-        tab_fade 1
-        active_tab_font_style   bold
-        inactive_tab_font_style bold
-      '';
-    };
+    # kitty = {
+    #   enable = true;
+    #   package = pkgs.kitty;
+    #   settings = {
+    #     wheel_scroll_min_lines = 1;
+    #     window_padding_width = 4;
+    #     confirm_os_window_close = 0;
+    #     scrollback_lines = 10000;
+    #     enable_audio_bell = false;
+    #     mouse_hide_wait = 60;
+    #   };
+    #   extraConfig = ''
+    #     tab_bar_style fade
+    #     tab_fade 1
+    #     active_tab_font_style   bold
+    #     inactive_tab_font_style bold
+    #   '';
+    # };
     fish = {
       enable = true;
       interactiveShellInit = ''
@@ -178,6 +181,8 @@ in
         mobile-display = "hyprctl keyword monitor 'DP-4, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
         mobile-display-alt = "hyprctl keyword monitor 'DP-2, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
         docked-display = "hyprctl keyword monitor 'DP-4, highres, 0x0, 1' && hyprctl keyword monitor 'DP-2, highres, 0x1441, 1' && hyprctl keyword monitor 'eDP-1, highres,3441x1441,1'";
+        laptop-display-off = "hyprctl keyword monitor 'eDP-1, disable'";
+        laptop-display-on = "hyprctl keyword monitor 'eDP-1, highres,3441x1441,1'";
       };
     };
     bash = {

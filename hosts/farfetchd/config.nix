@@ -235,16 +235,17 @@
     audacity
     awscli2
     bat
-    bitwarden-cli
     beekeeper-studio
     beeper
+    bitwarden-cli
     brave
     brightnessctl
     bruno
     btop
     calc
-    code-cursor
     cheese
+    code-cursor
+    corepack
     ctop
     ddev
     discord
@@ -253,35 +254,35 @@
     evince
     eza
     fastfetch
-    fishPlugins.bass
     ffmpeg
+    file-roller
     filezilla
+    fishPlugins.bass
     gdu
-    gscan2pdf
     gimp
     git
     glow
-    file-roller
-    gpu-screen-recorder-gtk
     gnome-boxes
+    gpu-screen-recorder-gtk
     greetd.tuigreet
     grim
+    gscan2pdf
     gum
     htop
     hyprpicker
     imv
+    inputs.zen-browser.packages."${system}".default
     jellyfin-media-player
-    kdenlive
-    shotcut
-    superfile
-    stepmania
     k9s
     kdash
+    kdenlive
+    khal
     killall
+    kooha
+    ktop
     kubectl
     kubectx
     kubernetes-helm
-    ktop
     libnotify
     libreoffice
     libsForQt5.kdeconnect-kde
@@ -289,7 +290,9 @@
     lm_sensors
     lolcat
     lshw
+    lutris
     lxqt.lxqt-policykit
+    meli
     meson
     mkcert
     mpv
@@ -301,7 +304,6 @@
     nixfmt-rfc-style
     nodejs
     nostui
-    corepack
     obsidian
     openrct2
     pavucontrol
@@ -314,42 +316,45 @@
     prusa-slicer
     qemu
     ripgrep
+    shotcut
     slack
     slurp
     socat
     sparrow
     spotify
     starship
+    stepmania
+    superfile
     swappy
     swaynotificationcenter
     swww
     tailscale
     tailscale-systray
     teams-for-linux
+    toot
     tree
+    ulauncher
     ungoogled-chromium
     unrar
     unzip
-    ulauncher
     v4l-utils
     ventoy-full
     vhs
     vim
-    virt-viewer
     virt-manager
+    virt-viewer
     vivaldi
     vscode
     watson
     wezterm
     wget
     wl-clipboard
+    wlr-randr
     yad
     yarn
     ydotool
-    zed-editor
-    # zen-browser
-    inputs.zen-browser.packages."${system}".default
     zathura
+    zed-editor
     zellij
     zoom-us
   ];
