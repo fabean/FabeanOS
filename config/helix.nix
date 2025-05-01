@@ -49,6 +49,7 @@
         space.space = "file_picker";
       };
       editor.file-picker.hidden = false;
+      editor.file-picker.git-ignore = false;
     };
 
   };
