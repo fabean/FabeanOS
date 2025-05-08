@@ -8,6 +8,13 @@
   ...
 }:
 
+let
+  # Define unstable channel for specific packages
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in
 {
   imports = [
     ./hardware.nix
@@ -247,7 +254,7 @@
     code-cursor
     corepack
     ctop
-    ddev
+    unstable.ddev
     discord
     dogdns
     duf
