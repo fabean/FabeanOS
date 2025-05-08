@@ -145,7 +145,7 @@ in {
         "float, class:^([Ff]erdium)$"
         "float, title:^(Picture-in-Picture)$"
         "float, title:^(Picture in picture)$"
-        "float, class:^(mpv|com.github.rafostar.Clapper)$"
+        "float, class:^(com.github.rafostar.Clapper)$"
         "float, title:^(Authentication Required)$"
         "float, class:(codium|codium-url-handler|VSCodium), title:negative:(.*codium.*|.*VSCodium.*)"
         "float, class:^(com.heroicgameslauncher.hgl)$, title:negative:(Heroic Games Launcher)"
