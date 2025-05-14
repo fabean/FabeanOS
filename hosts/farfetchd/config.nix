@@ -5,6 +5,7 @@
   username,
   options,
   inputs,
+  lib,
   ...
 }:
 
@@ -116,6 +117,7 @@ in
 
   # Enable networking
   networking.networkmanager.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = false;
   networking.hostName = host;
   networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 
@@ -239,6 +241,7 @@ in
 
   environment.systemPackages = with pkgs; [
     appimage-run
+    aerc
     audacity
     awscli2
     bat
@@ -281,7 +284,6 @@ in
     inputs.zen-browser.packages."${system}".default
     jellyfin-media-player
     k9s
-    kdash
     kdenlive
     khal
     killall
@@ -299,7 +301,6 @@ in
     lshw
     lutris
     lxqt.lxqt-policykit
-    meli
     meson
     mkcert
     mpv
@@ -307,6 +308,7 @@ in
     networkmanagerapplet
     ngrok
     nh
+    nb
     ninja
     nixfmt-rfc-style
     nodejs
@@ -543,7 +545,17 @@ in
   virtualisation.libvirtd = {
     enable = true;
   };
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = false;  # This prevents Docker from starting at boot
+    # Add this line to properly disable auto-start
+    autoPrune.enable = true;
+    daemon.settings = {
+      features = { buildkit = true; };
+    };
+  };
+  # Ensure Docker socket is not auto-started
+  systemd.services.docker.wantedBy = pkgs.lib.mkForce [];
 
   # virtualisation.podman = {
   #   enable = true;

@@ -50,8 +50,8 @@ in {
       general = {
         "$modifier" = "SUPER";
         layout = "dwindle";
-        gaps_in = 6;
-        gaps_out = 8;
+        gaps_in = 3;
+        gaps_out = 4;
         border_size = 2;
         resize_on_border = true;
         "col.active_border" = lib.mkForce "rgb(${config.lib.stylix.colors.base08}) rgb(${config.lib.stylix.colors.base0C}) 45deg";

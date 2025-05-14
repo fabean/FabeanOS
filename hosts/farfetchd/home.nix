@@ -139,24 +139,6 @@ in
         vim_keys = true;
       };
     };
-    # kitty = {
-    #   enable = true;
-    #   package = pkgs.kitty;
-    #   settings = {
-    #     wheel_scroll_min_lines = 1;
-    #     window_padding_width = 4;
-    #     confirm_os_window_close = 0;
-    #     scrollback_lines = 10000;
-    #     enable_audio_bell = false;
-    #     mouse_hide_wait = 60;
-    #   };
-    #   extraConfig = ''
-    #     tab_bar_style fade
-    #     tab_fade 1
-    #     active_tab_font_style   bold
-    #     inactive_tab_font_style bold
-    #   '';
-    # };
     fish = {
       enable = true;
       interactiveShellInit = ''
@@ -177,6 +159,7 @@ in
         ggpush = "git push origin $(git branch --show-current)";
         gs = "git status";
         lando = "node /home/josh/Code/lando-cli/bin/lando";
+        ytviewer = "/home/josh/Code/ytviewer/ytviewer";
         cat = "bat";
         mobile-display = "hyprctl keyword monitor 'DP-4, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
         mobile-display-alt = "hyprctl keyword monitor 'DP-2, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";

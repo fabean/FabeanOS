@@ -9,10 +9,10 @@
 
     [scratchpads.term]
     animation = "fromTop"
-    command = "wezterm --class wezterm-dropterm"
-    class = "wezterm-dropterm"
-    size = "75% 60%"
-    max_size = "1920px 100%"
+    command = "kitty --class kitty-dropterm"
+    class = "kitty-dropterm"
+    size = "50% 50%"
+    max_size = "1000px 1000px"
 
     [scratchpads.volume]
     animation = "fromTop"
