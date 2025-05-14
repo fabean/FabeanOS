@@ -246,7 +246,7 @@ in
     awscli2
     bat
     beekeeper-studio
-    beeper
+    unstable.beeper
     bitwarden-cli
     brave
     brightnessctl
@@ -254,7 +254,7 @@ in
     btop
     calc
     cheese
-    code-cursor
+    unstable.code-cursor
     corepack
     ctop
     unstable.ddev
@@ -283,6 +283,7 @@ in
     imv
     inputs.zen-browser.packages."${system}".default
     jellyfin-media-player
+    jira-cli-go
     k9s
     kdenlive
     khal
