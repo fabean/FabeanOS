@@ -247,6 +247,7 @@ in
     bat
     beekeeper-studio
     unstable.beeper
+    unstable.jellyfin-tui
     bitwarden-cli
     brave
     brightnessctl
