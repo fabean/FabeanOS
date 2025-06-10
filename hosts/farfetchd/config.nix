@@ -365,7 +365,6 @@ in
     yarn
     ydotool
     zathura
-    zed-editor
     zellij
     zoom-us
   ];
