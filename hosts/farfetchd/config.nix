@@ -331,7 +331,7 @@ in
     slack
     slurp
     socat
-    sparrow
+    unstable.sparrow
     spotify
     starship
     stepmania
