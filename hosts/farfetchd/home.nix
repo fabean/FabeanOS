@@ -82,8 +82,13 @@ in
   };
 
   # Styling Options
-  stylix.targets.waybar.enable = false;
-  stylix.targets.rofi.enable = false;
+  stylix = {
+    targets = {
+      waybar.enable = false;
+      rofi.enable = false;
+      helix.enable = false;
+    };
+  };
   gtk = {
     iconTheme = {
       name = "Papirus-Dark";

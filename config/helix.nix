@@ -45,6 +45,7 @@
     };
 
     settings = {
+      theme = "gruvbox_dark_hard";
       keys.normal = {
         space.space = "file_picker";
       };
