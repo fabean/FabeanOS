@@ -242,7 +242,6 @@ in
   environment.systemPackages = with pkgs; [
     appimage-run
     aerc
-    audacity
     awscli2
     bat
     beekeeper-studio
@@ -334,7 +333,6 @@ in
     unstable.sparrow
     spotify
     starship
-    stepmania
     superfile
     swappy
     swaynotificationcenter
@@ -463,7 +461,7 @@ in
     };
     fwupd.enable = true;
     desktopManager = {
-      cosmic.enable = true;
+      #cosmic.enable = true;
 #      plasma6.enable = true;
     };
     # dnsmasq = {

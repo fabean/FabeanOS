@@ -14,10 +14,10 @@
       flake = false;
     };
     flatpaks.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nixos-cosmic = {
+    #  url = "github:lilyinstarlight/nixos-cosmic";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     # This is required for plugin support.
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
@@ -27,7 +27,7 @@
     # }
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, flatpaks, nixos-cosmic, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, flatpaks, ... }:
     let
       system = "x86_64-linux";
       host = "farfetchd";
@@ -48,7 +48,6 @@
                 trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
               };
             }
-            nixos-cosmic.nixosModules.default
             ./hosts/${host}/config.nix
             inputs.stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
