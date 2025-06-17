@@ -27,6 +27,7 @@ in
     ../../config/wlogout.nix
     ../../config/helix.nix
     ../../config/kitty.nix
+    ../../config/zellij.nix
     # ../../config/pyprland.nix
   ];
 
