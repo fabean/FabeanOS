@@ -83,7 +83,7 @@ in
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+        package = pkgs.nerd-fonts.jetbrains-mono;
         name = "DejaVu Sans Mono";
       };
       sansSerif = {
@@ -244,7 +244,6 @@ in
     aerc
     awscli2
     bat
-    beekeeper-studio
     unstable.beeper
     unstable.jellyfin-tui
     bitwarden-cli
@@ -285,7 +284,7 @@ in
     jellyfin-media-player
     jira-cli-go
     k9s
-    kdenlive
+    kdePackages.kdenlive
     khal
     killall
     kooha
@@ -347,7 +346,6 @@ in
     unrar
     unzip
     v4l-utils
-    ventoy-full
     vhs
     vim
     virt-manager
@@ -355,7 +353,6 @@ in
     vivaldi
     vscode
     watson
-    wezterm
     wget
     wl-clipboard
     wlr-randr
@@ -495,7 +492,7 @@ in
   services.hardware.bolt.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # Security / Polkit
   security.rtkit.enable = true;
@@ -584,9 +581,9 @@ in
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # on your system were taken. It's perfectly fine and recommended to leave
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }

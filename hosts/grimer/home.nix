@@ -12,7 +12,7 @@ in
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 
   # Import Program Configurations
   imports = [
@@ -54,7 +54,6 @@ in
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
         starship init fish | source
-        fastfetch
       '';
       shellAliases = {
         sv = "sudo nvim";
