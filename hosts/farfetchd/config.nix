@@ -257,6 +257,7 @@ in
     corepack
     ctop
     unstable.ddev
+    devtoolbox
     discord
     dogdns
     duf
@@ -550,6 +551,7 @@ in
       features = { buildkit = true; };
     };
   };
+  virtualisation.waydroid.enable = true;
   # Ensure Docker socket is not auto-started
   systemd.services.docker.wantedBy = pkgs.lib.mkForce [];
 
@@ -570,6 +572,12 @@ in
     firewall = {
       allowedTCPPorts = [ 8384 22000 9003 5432 ];
       allowedUDPPorts = [ 22000 21027 ];
+      allowedTCPPortRanges = [
+        { from = 1714; to = 1764; } # KDE Connect
+      ];
+      allowedUDPPortRanges = [
+        { from = 1714; to = 1764; } # KDE Connect
+      ];
     };
     extraHosts = ''
       127.0.0.1 riversource.dev.local
