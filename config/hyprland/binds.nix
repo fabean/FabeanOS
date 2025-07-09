@@ -12,6 +12,7 @@ in {
       "$modifierSHIFT,W,exec,web-search"
       "$modifierALT,W,exec,wallsetter"
       "$modifierSHIFT,N,exec,swaync-client -rs"
+      "$modifierSHIFT,M,exec,task-waybar"
       "$modifier,W,exec,zen"
       "$modifier,E,exec,emopicker9000"
       "$modifier,S,exec,screenshootin"
