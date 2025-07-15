@@ -22,6 +22,7 @@ in
         "docker"
         "dialout"
         "video"
+        "plugdev"
       ];
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;
