@@ -19,3 +19,13 @@ opt.splitright = true
 opt.splitbelow = true
 opt.swapfile = false
 vim.g.mapleader = " "
+
+-- Associate Drupal file types with PHP
+vim.filetype.add({
+    extension = {
+        theme = "php",
+        module = "php",
+        install = "php",
+        inc = "php"
+    }
+})

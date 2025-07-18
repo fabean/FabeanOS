@@ -25,6 +25,9 @@ in
         yaml-language-server
         pyright
         marksman
+        nodePackages.typescript-language-server
+        nodePackages.vscode-langservers-extracted
+        nodePackages.intelephense
       ];
       plugins = with pkgs.vimPlugins; [
         alpha-nvim
@@ -57,10 +60,14 @@ in
         nvim-tree-lua
         telescope-fzf-native-nvim
         vim-tmux-navigator
+        nvim-dap
+        nvim-dap-ui
+        nvim-dap-virtual-text
+        telescope-dap-nvim
+        which-key-nvim
       ];
       extraConfig = ''
         set noemoji
-        nnoremap : <cmd>FineCmdline<CR>
       '';
       extraLuaConfig = ''
         ${builtins.readFile ./nvim/options.lua}
@@ -76,6 +83,8 @@ in
         ${builtins.readFile ./nvim/plugins/todo-comments.lua}
         ${builtins.readFile ./nvim/plugins/treesitter.lua}
         ${builtins.readFile ./nvim/plugins/fine-cmdline.lua}
+        ${builtins.readFile ./nvim/plugins/dap.lua}
+        ${builtins.readFile ./nvim/plugins/which-key.lua}
         require("ibl").setup()
         require("bufferline").setup{}
         require("lualine").setup({

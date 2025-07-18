@@ -380,6 +380,8 @@ in
     ZANEYOS_VERSION = "2.2";
     ZANEYOS = "true";
     TERM = "xterm-256color";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
   # Extra Portal Configuration
