@@ -4,6 +4,7 @@ let
     name = "fine-cmdline";
     src = inputs.fine-cmdline;
   };
+
 in
 {
   programs = {
@@ -64,7 +65,7 @@ in
         nvim-dap-ui
         nvim-dap-virtual-text
         telescope-dap-nvim
-        which-key-nvim
+        vim-be-good
       ];
       extraConfig = ''
         set noemoji
@@ -84,7 +85,6 @@ in
         ${builtins.readFile ./nvim/plugins/treesitter.lua}
         ${builtins.readFile ./nvim/plugins/fine-cmdline.lua}
         ${builtins.readFile ./nvim/plugins/dap.lua}
-        ${builtins.readFile ./nvim/plugins/which-key.lua}
         require("ibl").setup()
         require("bufferline").setup{}
         require("lualine").setup({

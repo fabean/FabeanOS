@@ -253,8 +253,10 @@ in
     bruno
     btop
     calc
+    caligula
     cheese
     unstable.code-cursor
+    unstable.opencode
     corepack
     ctop
     unstable.ddev
@@ -317,12 +319,14 @@ in
     nostui
     obsidian
     openrct2
+    pastel
     pavucontrol
     pciutils
     php
     php83Packages.composer
     pkg-config
     playerctl
+    python3
     protonup-qt
     prusa-slicer
     qemu
@@ -332,7 +336,6 @@ in
     slurp
     socat
     unstable.sparrow
-    spotify
     starship
     superfile
     swappy
@@ -353,7 +356,6 @@ in
     virt-manager
     virt-viewer
     vivaldi
-    vscode
     watson
     wget
     wl-clipboard

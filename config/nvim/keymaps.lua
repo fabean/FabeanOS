@@ -13,3 +13,14 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- LSP keybindings
+keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
+keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover documentation" })
+keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
+keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
