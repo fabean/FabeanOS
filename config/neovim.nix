@@ -66,6 +66,7 @@ in
         nvim-dap-virtual-text
         telescope-dap-nvim
         vim-be-good
+        which-key-nvim
       ];
       extraConfig = ''
         set noemoji
@@ -83,6 +84,7 @@ in
         ${builtins.readFile ./nvim/plugins/telescope.lua}
         ${builtins.readFile ./nvim/plugins/todo-comments.lua}
         ${builtins.readFile ./nvim/plugins/treesitter.lua}
+        ${builtins.readFile ./nvim/plugins/which-key.lua}
         ${builtins.readFile ./nvim/plugins/fine-cmdline.lua}
         ${builtins.readFile ./nvim/plugins/dap.lua}
         require("ibl").setup()
