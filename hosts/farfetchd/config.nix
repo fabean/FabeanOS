@@ -241,6 +241,8 @@ in
 
   environment.systemPackages = with pkgs; [
     appimage-run
+    ansible
+    distrobox
     aerc
     awscli2
     bat
