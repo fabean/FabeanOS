@@ -270,6 +270,7 @@ in
     eza
     fastfetch
     ffmpeg
+    fzf
     file-roller
     filezilla
     fishPlugins.bass
@@ -368,6 +369,7 @@ in
     zathura
     zellij
     zoom-us
+    zoxide
   ];
 
   fonts = {

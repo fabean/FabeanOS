@@ -150,13 +150,14 @@ in
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
         starship init fish | source
+        zoxide init --cmd cd fish | source
       '';
       shellAliases = {
         sv = "sudo nvim";
         fr = "nh os switch --hostname ${host} /home/${username}/Code/fabeanos";
         fu = "nh os switch --hostname ${host} --update /home/${username}/Code/fabeanos";
         ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-        v = "nvim";
+        vim = "nvim";
         ls = "eza --icons";
         ll = "eza -lh --icons --grid --group-directories-first";
         la = "eza -lah --icons --grid --group-directories-first";
@@ -165,6 +166,7 @@ in
         gs = "git status";
         lando = "node /home/josh/Code/lando-cli/bin/lando";
         ytviewer = "/home/josh/Code/ytviewer/ytviewer";
+        toney = "/home/josh/Code/Toney/Toney";
         cat = "bat";
         mobile-display = "hyprctl keyword monitor 'DP-4, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
         mobile-display-alt = "hyprctl keyword monitor 'DP-2, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";

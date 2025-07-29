@@ -18,6 +18,8 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 opt.swapfile = false
+opt.endofline = false
+opt.fixendofline = false
 vim.g.mapleader = " "
 
 -- Associate Drupal file types with PHP

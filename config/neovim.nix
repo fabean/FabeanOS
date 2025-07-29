@@ -67,6 +67,7 @@ in
         telescope-dap-nvim
         vim-be-good
         which-key-nvim
+        supermaven-nvim
       ];
       extraConfig = ''
         set noemoji
@@ -81,6 +82,7 @@ in
         ${builtins.readFile ./nvim/plugins/cmp.lua}
         ${builtins.readFile ./nvim/plugins/lsp.lua}
         ${builtins.readFile ./nvim/plugins/nvim-tree.lua}
+        ${builtins.readFile ./nvim/plugins/supermaven.lua}
         ${builtins.readFile ./nvim/plugins/telescope.lua}
         ${builtins.readFile ./nvim/plugins/todo-comments.lua}
         ${builtins.readFile ./nvim/plugins/treesitter.lua}
