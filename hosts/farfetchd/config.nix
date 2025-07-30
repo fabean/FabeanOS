@@ -246,10 +246,11 @@ in
     aerc
     awscli2
     bat
-    unstable.beeper
     keymapp
     unstable.jellyfin-tui
+    unstable.beeper
     bitwarden-cli
+    fuzzel
     brave
     brightnessctl
     bruno
@@ -377,7 +378,7 @@ in
       noto-fonts-emoji
       noto-fonts-cjk-sans
       font-awesome
-      symbola
+      #symbola
       material-icons
     ];
   };

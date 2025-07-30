@@ -8,11 +8,11 @@
     ]
 
     [scratchpads.term]
-    animation = "fromTop"
+    animation = "fromBottom"
     command = "kitty --class kitty-dropterm"
     class = "kitty-dropterm"
-    size = "50% 50%"
-    max_size = "1000px 1000px"
+    size = "50% 30%"
+    max_size = "1000px 700px"
 
     [scratchpads.volume]
     animation = "fromTop"
