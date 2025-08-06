@@ -19,6 +19,7 @@
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    wiremix.url = "github:tsowell/wiremix";
     # This is required for plugin support.
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland-plugins = {
@@ -27,7 +28,7 @@
     # }
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, flatpaks, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, flatpaks, wiremix, ... }:
     let
       system = "x86_64-linux";
       host = "farfetchd";

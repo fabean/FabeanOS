@@ -20,22 +20,22 @@ with lib;
       {
         layer = "top";
         position = "top";
-        modules-center = [ "hyprland/workspaces" ];
         modules-left = [
-          "hyprland/window"
+          "hyprland/workspaces"
+        ];
+        modules-center = [
+          "custom/watson"
+          "clock"
+        ];
+        modules-right = [
+          "custom/notification"
+          "bluetooth"
           "pulseaudio"
           "cpu"
           "memory"
           "idle_inhibitor"
-          "custom/watson"
-        ];
-        modules-right = [
-          "custom/hyprbindings"
-          "custom/notification"
-          "custom/exit"
           "battery"
-          "tray"
-          "clock"
+          "group/tray-expander"
         ];
 
         "hyprland/workspaces" = {
@@ -49,7 +49,7 @@ with lib;
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "clock" = {
-          format = if clock24h == true then '' {:L%H:%M}'' else '' {:L%I:%M %p}'';
+          format = if clock24h == true then ''{:L%H:%M}'' else ''{:L%I:%M %p}'';
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
         };
@@ -60,15 +60,24 @@ with lib;
             "" = " 🙈 No Windows? ";
           };
         };
+        "bluetooth" = {
+          format = "";
+          format-disabled = "󰂲";
+          format-connected = "";
+          tooltip-format = "Devices connected: {num_connections}";
+          on-click = "blueberry";
+        };
         "memory" = {
           interval = 5;
-          format = " {}%";
+          format = "";
           tooltip = true;
+          on-click = "kitty --class=kitty-memory-control btop";
         };
         "cpu" = {
           interval = 5;
-          format = " {usage:2}%";
+          format = "";
           tooltip = true;
+          on-click = "kitty --class=kitty-cpu-control btop";
         };
         "disk" = {
           format = " {free}";
@@ -110,7 +119,7 @@ with lib;
               ""
             ];
           };
-          on-click = "sleep 0.1 && pavucontrol";
+          on-click = "kitty --class=kitty-volume-control wiremix";
         };
         "custom/exit" = {
           tooltip = false;
@@ -163,6 +172,22 @@ with lib;
           interval = 10;
           escape = true;
         };
+        "custom/expand-icon" = {
+          format = " ";
+          tooltip = false;
+        };
+        "group/tray-expander" = {
+          orientation = "inherit";
+          drawer = {
+            transition-duration = .6;
+            children-class = "tray-group-item";
+          };
+          modules = [
+            "custom/expand-icon"
+            "tray"
+            "custom/exit"
+          ];
+        };
         "battery" = {
           states = {
             warning = 30;
@@ -190,103 +215,62 @@ with lib;
     ];
     style = concatStrings [
       ''
+      @define-color foreground #cdd6f4;
+      @define-color background #1a1b26;
+
         * {
           font-family: JetBrainsMono Nerd Font Mono, Font Awesome, sans-serif;
-          font-size: 16px;
-          border-radius: 0px;
+          background-color: @background;
+          color: @foreground;
           border: none;
-          min-height: 0px;
+          border-radius: 0;
+          min-height: 0;
+          font-size: 12px;
         }
-        window#waybar {
-          background: transparent;
+        .modules-left {
+          margin-left: 8px;
         }
-        #workspaces {
-          color: #${config.stylix.base16Scheme.base00};
-          background: #${config.stylix.base16Scheme.base01};
-          margin: 4px 4px;
-          padding: 5px 5px;
-          border-radius: 16px;
+
+        .modules-right {
+          margin-right: 8px;
         }
         #workspaces button {
-          font-weight: bold;
-          padding: 0px 5px;
-          margin: 0px 3px;
-          border-radius: 16px;
-          color: #${config.stylix.base16Scheme.base00};
-          background: linear-gradient(45deg, #${config.stylix.base16Scheme.base08}, #${config.stylix.base16Scheme.base0D});
+          all: initial;
+          padding: 0 6px;
+          margin: 0 1.5px;
+          min-width: 9px;
+        }
+
+        #workspaces button.empty {
           opacity: 0.5;
-          transition: ${betterTransition};
         }
         #workspaces button.active {
-          font-weight: bold;
-          padding: 0px 5px;
-          margin: 0px 3px;
-          border-radius: 16px;
-          color: #${config.stylix.base16Scheme.base00};
-          background: linear-gradient(45deg, #${config.stylix.base16Scheme.base08}, #${config.stylix.base16Scheme.base0D});
-          transition: ${betterTransition};
-          opacity: 1.0;
-          min-width: 40px;
+          font-weight: bolder;
         }
-        #workspaces button:hover {
-          font-weight: bold;
-          border-radius: 16px;
-          color: #${config.stylix.base16Scheme.base00};
-          background: linear-gradient(45deg, #${config.stylix.base16Scheme.base08}, #${config.stylix.base16Scheme.base0D});
-          opacity: 0.8;
-          transition: ${betterTransition};
-        }
-        tooltip {
-          background: #${config.stylix.base16Scheme.base00};
-          border: 1px solid #${config.stylix.base16Scheme.base08};
-          border-radius: 12px;
-        }
-        tooltip label {
-          color: #${config.stylix.base16Scheme.base08};
-        }
-        #window,
-        #pulseaudio,
-        #cpu,
-        #memory,
-        #idle_inhibitor,
-        #custom-watson {
-          font-weight: bold;
-          margin: 4px 0px;
-          margin-left: 7px;
-          padding: 0px 18px;
-          background: #${config.stylix.base16Scheme.base04};
-          color: #${config.stylix.base16Scheme.base00};
-          border-radius: 24px 10px 24px 10px;
-        }
-        #custom-startmenu {
-          color: #${config.stylix.base16Scheme.base0B};
-          background: #${config.stylix.base16Scheme.base02};
-          font-size: 28px;
-          margin: 0px;
-          padding: 0px 30px 0px 15px;
-          border-radius: 0px 0px 40px 0px;
-        }
-        #custom-hyprbindings,
-        #network,
-        #battery,
-        #custom-notification,
+
         #tray,
-        #custom-exit {
-          font-weight: bold;
-          background: #${config.stylix.base16Scheme.base0F};
-          color: #${config.stylix.base16Scheme.base00};
-          margin: 4px 0px;
-          margin-right: 7px;
-          border-radius: 10px 24px 10px 24px;
-          padding: 0px 18px;
+        #cpu,
+        #battery,
+        #network,
+        #bluetooth,
+        #pulseaudio,
+        #clock,
+        #custom-watson {
+          min-width: 12px;
+          margin: 0 7.5px;
         }
+
         #clock {
-          font-weight: bold;
-          color: #0D0E15;
-          background: linear-gradient(90deg, #${config.stylix.base16Scheme.base0E}, #${config.stylix.base16Scheme.base0C});
-          margin: 0px;
-          padding: 0px 15px 0px 30px;
-          border-radius: 0px 0px 0px 40px;
+          background-color: @background;
+          padding: 0 8px;
+        }
+
+        #custom-expand-icon {
+          margin-right: 12px;
+        }
+
+        tooltip {
+          padding: 2px;
         }
       ''
     ];

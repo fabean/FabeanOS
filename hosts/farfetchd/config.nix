@@ -249,6 +249,7 @@ in
     keymapp
     unstable.jellyfin-tui
     unstable.beeper
+    blueberry
     bitwarden-cli
     fuzzel
     brave
@@ -351,6 +352,7 @@ in
     toot
     tree
     ulauncher
+    inputs.wiremix.packages."${system}".default
     ungoogled-chromium
     unrar
     unzip

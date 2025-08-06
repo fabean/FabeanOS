@@ -62,251 +62,334 @@
   '';
   home.file.".config/swaync/style.css".text = ''
     * {
-      font-family: JetBrainsMono Nerd Font Mono;
-      font-weight: bold;
+      font-family: JetBrainsMono Nerd Font Mono, Font Awesome, sans-serif;
+      font-weight: normal;
+      font-size: 12px;
     }
+
     .control-center .notification-row:focus,
     .control-center .notification-row:hover {
       opacity: 0.9;
-      background: #${config.stylix.base16Scheme.base00}
+      background: #1a1b26;
     }
+
     .notification-row {
       outline: none;
-      margin: 10px;
+      margin: 8px;
       padding: 0;
     }
+
     .notification {
       background: transparent;
       padding: 0;
       margin: 0px;
     }
+
     .notification-content {
-      background: #${config.stylix.base16Scheme.base00};
-      padding: 10px;
-      border-radius: 5px;
-      border: 2px solid #${config.stylix.base16Scheme.base0D};
+      background: #1a1b26;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
       margin: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
+
     .notification-default-action {
       margin: 0;
       padding: 0;
-      border-radius: 5px;
+      border-radius: 8px;
     }
+
     .close-button {
-      background: #${config.stylix.base16Scheme.base08};
-      color: #${config.stylix.base16Scheme.base00};
+      background: #f7768e;
+      color: #1a1b26;
       text-shadow: none;
-      padding: 0;
-      border-radius: 5px;
-      margin-top: 5px;
-      margin-right: 5px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-top: 8px;
+      margin-right: 8px;
+      font-size: 10px;
     }
+
     .close-button:hover {
       box-shadow: none;
-      background: #${config.stylix.base16Scheme.base0D};
-      transition: all .15s ease-in-out;
-      border: none
+      background: #bb9af7;
+      transition: all 0.2s ease-in-out;
+      border: none;
     }
+
     .notification-action {
-      border: 2px solid #${config.stylix.base16Scheme.base0D};
-      border-top: none;
-      border-radius: 5px;
+      border: none;
+      border-top: 1px solid #414868;
+      border-radius: 0;
+      background: #1a1b26;
     }
+
     .notification-default-action:hover,
     .notification-action:hover {
-      color: #${config.stylix.base16Scheme.base0B};
-      background: #${config.stylix.base16Scheme.base0B}
+      color: #7aa2f7;
+      background: #414868;
     }
+
     .notification-default-action {
-      border-radius: 5px;
+      border-radius: 8px;
       margin: 0px;
     }
+
     .notification-default-action:not(:only-child) {
-      border-bottom-left-radius: 7px;
-      border-bottom-right-radius: 7px
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
+
     .notification-action:first-child {
-      border-bottom-left-radius: 10px;
-      background: #${config.stylix.base16Scheme.base00}
+      border-bottom-left-radius: 8px;
+      background: #1a1b26;
     }
+
     .notification-action:last-child {
-      border-bottom-right-radius: 10px;
-      background: #${config.stylix.base16Scheme.base00}
+      border-bottom-right-radius: 8px;
+      background: #1a1b26;
     }
+
     .inline-reply {
-      margin-top: 8px
+      margin-top: 8px;
     }
+
     .inline-reply-entry {
-      background: #${config.stylix.base16Scheme.base00};
-      color: #${config.stylix.base16Scheme.base05};
-      caret-color: #${config.stylix.base16Scheme.base05};
-      border: 1px solid #${config.stylix.base16Scheme.base09};
-      border-radius: 5px
+      background: #414868;
+      color: #cdd6f4;
+      caret-color: #cdd6f4;
+      border: 1px solid #565a6e;
+      border-radius: 4px;
+      padding: 8px;
     }
+
     .inline-reply-button {
       margin-left: 4px;
-      background: #${config.stylix.base16Scheme.base00};
-      border: 1px solid #${config.stylix.base16Scheme.base09};
-      border-radius: 5px;
-      color: #${config.stylix.base16Scheme.base05}
+      background: #7aa2f7;
+      border: none;
+      border-radius: 4px;
+      color: #1a1b26;
+      padding: 4px 8px;
     }
+
     .inline-reply-button:disabled {
-      background: initial;
-      color: #${config.stylix.base16Scheme.base03};
-      border: 1px solid transparent
+      background: #565a6e;
+      color: #414868;
+      border: none;
     }
+
     .inline-reply-button:hover {
-      background: #${config.stylix.base16Scheme.base00}
+      background: #bb9af7;
     }
+
     .body-image {
-      margin-top: 6px;
-      background-color: #${config.stylix.base16Scheme.base05};
-      border-radius: 5px
+      margin-top: 8px;
+      background-color: #414868;
+      border-radius: 4px;
     }
+
     .summary {
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 14px;
+      font-weight: 600;
       background: transparent;
-      color: rgba(158, 206, 106, 1);
-      text-shadow: none
+      color: #cdd6f4;
+      text-shadow: none;
     }
+
     .time {
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: normal;
       background: transparent;
-      color: #${config.stylix.base16Scheme.base05};
+      color: #565a6e;
       text-shadow: none;
-      margin-right: 18px
+      margin-right: 8px;
     }
+
     .body {
-      font-size: 15px;
-      font-weight: 400;
+      font-size: 12px;
+      font-weight: normal;
       background: transparent;
-      color: #${config.stylix.base16Scheme.base05};
-      text-shadow: none
-    }
-    .control-center {
-      background: #${config.stylix.base16Scheme.base00};
-      border: 2px solid #${config.stylix.base16Scheme.base0C};
-      border-radius: 5px;
-    }
-    .control-center-list {
-      background: transparent
-    }
-    .control-center-list-placeholder {
-      opacity: .5
-    }
-    .floating-notifications {
-      background: transparent
-    }
-    .blank-window {
-      background: alpha(black, 0)
-    }
-    .widget-title {
-      color: #${config.stylix.base16Scheme.base0B};
-      background: #${config.stylix.base16Scheme.base00};
-      padding: 5px 10px;
-      margin: 10px 10px 5px 10px;
-      font-size: 1.5rem;
-      border-radius: 5px;
-    }
-    .widget-title>button {
-      font-size: 1rem;
-      color: #${config.stylix.base16Scheme.base05};
+      color: #a9b1d6;
       text-shadow: none;
-      background: #${config.stylix.base16Scheme.base00};
+      margin-top: 4px;
+    }
+
+    .control-center {
+      background: #1a1b26;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .control-center-list {
+      background: transparent;
+    }
+
+    .control-center-list-placeholder {
+      opacity: 0.5;
+      color: #565a6e;
+    }
+
+    .floating-notifications {
+      background: transparent;
+    }
+
+    .blank-window {
+      background: alpha(black, 0);
+    }
+
+    .widget-title {
+      color: #cdd6f4;
+      background: transparent;
+      padding: 12px 16px 8px 16px;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 0;
+    }
+
+    .widget-title>button {
+      font-size: 12px;
+      color: #7aa2f7;
+      text-shadow: none;
+      background: transparent;
       box-shadow: none;
-      border-radius: 5px;
+      border-radius: 4px;
+      padding: 4px 8px;
     }
+
     .widget-title>button:hover {
-      background: #${config.stylix.base16Scheme.base08};
-      color: #${config.stylix.base16Scheme.base00};
+      background: #414868;
+      color: #cdd6f4;
     }
+
     .widget-dnd {
-      background: #${config.stylix.base16Scheme.base00};
-      padding: 5px 10px;
-      margin: 10px 10px 5px 10px;
-      border-radius: 5px;
-      font-size: large;
-      color: #${config.stylix.base16Scheme.base0B};
+      background: transparent;
+      padding: 8px 16px;
+      margin: 0;
+      border-radius: 0;
+      font-size: 14px;
+      color: #cdd6f4;
     }
+
     .widget-dnd>switch {
-      border-radius: 5px;
-      /* border: 1px solid #${config.stylix.base16Scheme.base0B}; */
-      background: #${config.stylix.base16Scheme.base0B};
+      border-radius: 12px;
+      background: #565a6e;
     }
+
     .widget-dnd>switch:checked {
-      background: #${config.stylix.base16Scheme.base08};
-      border: 1px solid #${config.stylix.base16Scheme.base08};
+      background: #7aa2f7;
+      border: none;
     }
+
     .widget-dnd>switch slider {
-      background: #${config.stylix.base16Scheme.base00};
-      border-radius: 5px
+      background: #cdd6f4;
+      border-radius: 10px;
     }
+
     .widget-dnd>switch:checked slider {
-      background: #${config.stylix.base16Scheme.base00};
-      border-radius: 5px
+      background: #cdd6f4;
+      border-radius: 10px;
     }
+
     .widget-label {
-        margin: 10px 10px 5px 10px;
+      margin: 8px 16px 4px 16px;
     }
+
     .widget-label>label {
-      font-size: 1rem;
-      color: #${config.stylix.base16Scheme.base05};
+      font-size: 12px;
+      color: #565a6e;
     }
+
     .widget-mpris {
-      color: #${config.stylix.base16Scheme.base05};
-      padding: 5px 10px;
-      margin: 10px 10px 5px 10px;
-      border-radius: 5px;
+      color: #cdd6f4;
+      padding: 8px 16px;
+      margin: 0;
+      border-radius: 0;
+      background: transparent;
     }
+
     .widget-mpris > box > button {
-      border-radius: 5px;
+      border-radius: 4px;
+      background: #414868;
+      color: #cdd6f4;
     }
+
+    .widget-mpris > box > button:hover {
+      background: #565a6e;
+    }
+
     .widget-mpris-player {
-      padding: 5px 10px;
-      margin: 10px
+      padding: 8px 16px;
+      margin: 0;
+      background: transparent;
     }
+
     .widget-mpris-title {
-      font-weight: 700;
-      font-size: 1.25rem
+      font-weight: 600;
+      font-size: 14px;
+      color: #cdd6f4;
     }
+
     .widget-mpris-subtitle {
-      font-size: 1.1rem
+      font-size: 12px;
+      color: #a9b1d6;
     }
+
     .widget-menubar>box>.menu-button-bar>button {
       border: none;
-      background: transparent
+      background: transparent;
     }
+
     .topbar-buttons>button {
       border: none;
-      background: transparent
+      background: transparent;
     }
+
     .widget-volume {
-      background: #${config.stylix.base16Scheme.base01};
-      padding: 5px;
-      margin: 10px 10px 5px 10px;
-      border-radius: 5px;
-      font-size: x-large;
-      color: #${config.stylix.base16Scheme.base05};
+      background: transparent;
+      padding: 8px 16px;
+      margin: 0;
+      border-radius: 0;
+      font-size: 14px;
+      color: #cdd6f4;
     }
+
     .widget-volume>box>button {
-      background: #${config.stylix.base16Scheme.base0B};
-      border: none
+      background: #7aa2f7;
+      border: none;
+      border-radius: 4px;
     }
+
+    .widget-volume>box>button:hover {
+      background: #bb9af7;
+    }
+
     .per-app-volume {
-      background-color: #${config.stylix.base16Scheme.base00};
-      padding: 4px 8px 8px;
-      margin: 0 8px 8px;
-      border-radius: 5px;
+      background-color: #414868;
+      padding: 8px 12px;
+      margin: 4px 16px;
+      border-radius: 4px;
     }
+
     .widget-backlight {
-      background: #${config.stylix.base16Scheme.base01};
-      padding: 5px;
-      margin: 10px 10px 5px 10px;
-      border-radius: 5px;
-      font-size: x-large;
-      color: #${config.stylix.base16Scheme.base05}
+      background: transparent;
+      padding: 8px 16px;
+      margin: 0;
+      border-radius: 0;
+      font-size: 14px;
+      color: #cdd6f4;
+    }
+
+    .widget-backlight>box>button {
+      background: #7aa2f7;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .widget-backlight>box>button:hover {
+      background: #bb9af7;
     }
   '';
 }
