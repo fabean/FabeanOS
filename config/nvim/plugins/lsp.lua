@@ -4,7 +4,17 @@ local lspconfig = require("lspconfig")
 require'lspconfig'.pyright.setup{}
 
 -- PHP
-require'lspconfig'.intelephense.setup{}
+require'lspconfig'.intelephense.setup{
+  settings = {
+    intelephense = {
+      format = {
+        indentSize = 2,
+        tabSize = 2,
+        useTabs = false,
+      },
+    },
+  },
+}
 
 -- Nix
 require'lspconfig'.nil_ls.setup{}

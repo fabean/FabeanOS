@@ -69,6 +69,7 @@ in
         which-key-nvim
         supermaven-nvim
         harpoon2
+        guess-indent-nvim
       ];
       extraConfig = ''
         set noemoji
@@ -91,6 +92,7 @@ in
         ${builtins.readFile ./nvim/plugins/fine-cmdline.lua}
         ${builtins.readFile ./nvim/plugins/dap.lua}
         ${builtins.readFile ./nvim/plugins/harpoon.lua}
+        ${builtins.readFile ./nvim/plugins/guess-indent.lua}
         require("ibl").setup()
         require("bufferline").setup{}
         require("lualine").setup({
