@@ -218,7 +218,7 @@
     .control-center {
       background: #1a1b26;
       border: none;
-      border-radius: 12px;
+      border-radius: 0;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
 

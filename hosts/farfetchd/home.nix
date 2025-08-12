@@ -167,6 +167,7 @@ in
         lando = "node /home/josh/Code/lando-cli/bin/lando";
         ytviewer = "/home/josh/Code/ytviewer/ytviewer";
         toney = "/home/josh/Code/Toney/Toney";
+        cursor-cli = "steam-run /home/josh/.local/bin/cursor-agent";
         cat = "bat";
         mobile-display = "hyprctl keyword monitor 'DP-4, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";
         mobile-display-alt = "hyprctl keyword monitor 'DP-2, highres, 2257, 1' && hyprctl keyword monitor 'eDP-1, highres, 0x0, 1'";

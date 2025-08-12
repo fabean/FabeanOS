@@ -33,7 +33,6 @@ with lib;
           "pulseaudio"
           "cpu"
           "memory"
-          "idle_inhibitor"
           "battery"
           "group/tray-expander"
         ];
@@ -185,6 +184,7 @@ with lib;
           modules = [
             "custom/expand-icon"
             "tray"
+            "idle_inhibitor"
             "custom/exit"
           ];
         };
@@ -225,7 +225,7 @@ with lib;
           border: none;
           border-radius: 0;
           min-height: 0;
-          font-size: 12px;
+          font-size: 14px;
         }
         .modules-left {
           margin-left: 8px;
@@ -234,9 +234,10 @@ with lib;
         .modules-right {
           margin-right: 8px;
         }
+
         #workspaces button {
           all: initial;
-          padding: 0 6px;
+          padding: 5px 6px;
           margin: 0 1.5px;
           min-width: 9px;
         }
@@ -255,6 +256,8 @@ with lib;
         #bluetooth,
         #pulseaudio,
         #clock,
+        #idle_inhibitor,
+        #custom-exit,
         #custom-watson {
           min-width: 12px;
           margin: 0 7.5px;

@@ -336,6 +336,7 @@ in
     prusa-slicer
     qemu
     ripgrep
+    rustdesk-flutter
     shotcut
     slack
     slurp
@@ -373,6 +374,10 @@ in
     zellij
     zoom-us
     zoxide
+    # Fingerprint authentication tools
+    fprintd
+    libfprint
+    (import ../../scripts/fingerprint-setup.nix { inherit pkgs; })
   ];
 
   fonts = {
@@ -436,6 +441,54 @@ in
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
       # Keymapp Flashing rules for the Voyager
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="3297", MODE:="0666", SYMLINK+="ignition_dfu"
+
+      # Fingerprint device access
+      KERNEL=="hidraw*", ATTRS{idVendor}=="138a", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="27c6", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="06cb", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0a5c", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0c45", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="1c7a", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="2080", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="18d1", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0483", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="04f3", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0bda", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0d8c", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0e0f", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0fda", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="10a5", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="12d1", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="13e3", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="147e", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="1a86", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="1b1c", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="1c7a", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="1e4d", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="24ae", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="27c6", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="2a7a", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="2b24", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="2c7c", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="2d1f", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="2e8a", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="3297", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="357d", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="413c", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="5986", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="8086", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="8087", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="8bb3", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="8fd1", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="a0b4", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="a12a", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="a601", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="b58e", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="c33c", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="c52b", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="d79a", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="e0cd", MODE="0660", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="f766", MODE="0660", GROUP="plugdev"
     '';
     xserver = {
       enable = false;
@@ -553,6 +606,14 @@ in
       }
     })
   '';
+
+  # Fingerprint authentication
+  services.fprintd.enable = true;
+  security.pam.services.login.fprintAuth = true;
+  security.pam.services.sudo.fprintAuth = true;
+  security.pam.services.swaylock.fprintAuth = true;
+  security.pam.services.gdm-password.fprintAuth = true;
+  security.pam.services.gdm-autologin.fprintAuth = true;
   security.pam.services.swaylock = {
     text = ''
       auth include login
