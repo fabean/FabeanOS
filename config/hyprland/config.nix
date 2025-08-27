@@ -23,7 +23,6 @@ in {
         "tailscale-systray"
         "pypr &"
         "hypridle"
-        "ulauncher"
         "sleep .5 && swww img /home/${username}/Pictures/Wallpapers/sunrise.jpg"
       ];
 
@@ -178,10 +177,6 @@ in {
         "keepaspectratio, title:^(Picture in picture)$"
         "noblur, tag:games*"
         "fullscreen, tag:games*"
-        "opacity 0.9 0.9, class:^(ulauncher)$"
-        "noborder, class:^(ulauncher)$"
-        "noblur, class:^(ulauncher)$"
-        "noshadow, class:^(ulauncher)$"
       ];
 
       env = [

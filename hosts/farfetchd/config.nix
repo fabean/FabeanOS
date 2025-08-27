@@ -354,7 +354,6 @@ in
     teams-for-linux
     toot
     tree
-    ulauncher
     inputs.wiremix.packages."${system}".default
     ungoogled-chromium
     unrar
