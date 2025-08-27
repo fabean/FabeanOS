@@ -22,6 +22,7 @@ with lib;
         position = "top";
         modules-left = [
           "hyprland/workspaces"
+          "custom/btc-price"
         ];
         modules-center = [
           "custom/watson"
@@ -211,6 +212,14 @@ with lib;
           on-click = "";
           tooltip = false;
         };
+        "custom/btc-price" = {
+          tooltip = false;
+          format = "{}";
+          exec = "btc-price";
+          interval = 60;
+          escape = true;
+          return-type = "json";
+        };
       }
     ];
     style = concatStrings [
@@ -258,9 +267,14 @@ with lib;
         #clock,
         #idle_inhibitor,
         #custom-exit,
-        #custom-watson {
+        #custom-watson,
+        #custom-btc-price {
           min-width: 12px;
           margin: 0 7.5px;
+        }
+
+        #custom-btc-price {
+          margin-left: 12px;
         }
 
         #clock {

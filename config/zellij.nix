@@ -4,6 +4,7 @@
     package = pkgs.zellij;
     settings = {
       theme = "gruvbox-dark";
+      show_startup_tips = false;
       keybinds = {
         unbind = [
           "Alt h"

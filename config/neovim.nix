@@ -4,6 +4,10 @@ let
     name = "fine-cmdline";
     src = inputs.fine-cmdline;
   };
+  neowiki = pkgs.vimUtils.buildVimPlugin {
+    name = "neowiki-nvim";
+    src = inputs.neowiki-nvim;
+  };
 
 in
 {
@@ -70,6 +74,7 @@ in
         supermaven-nvim
         harpoon2
         guess-indent-nvim
+        neowiki
       ];
       extraConfig = ''
         set noemoji
@@ -93,6 +98,7 @@ in
         ${builtins.readFile ./nvim/plugins/dap.lua}
         ${builtins.readFile ./nvim/plugins/harpoon.lua}
         ${builtins.readFile ./nvim/plugins/guess-indent.lua}
+        ${builtins.readFile ./nvim/plugins/neowiki.lua}
         require("ibl").setup()
         require("bufferline").setup{}
         require("lualine").setup({

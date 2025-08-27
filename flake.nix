@@ -13,6 +13,10 @@
       url = "github:VonHeikemen/fine-cmdline.nvim";
       flake = false;
     };
+    neowiki-nvim = {
+      url = "github:echaya/neowiki.nvim";
+      flake = false;
+    };
     flatpaks.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
     #nixos-cosmic = {
     #  url = "github:lilyinstarlight/nixos-cosmic";

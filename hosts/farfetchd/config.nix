@@ -241,6 +241,7 @@ in
 
   environment.systemPackages = with pkgs; [
     appimage-run
+    arduino
     ansible
     distrobox
     aerc
@@ -292,6 +293,7 @@ in
     inputs.zen-browser.packages."${system}".default
     jellyfin-media-player
     jira-cli-go
+    jq
     k9s
     kdePackages.kdenlive
     khal
