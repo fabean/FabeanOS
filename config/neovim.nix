@@ -75,6 +75,7 @@ in
         harpoon2
         guess-indent-nvim
         neowiki
+        gitsigns-nvim
       ];
       extraConfig = ''
         set noemoji
@@ -99,6 +100,7 @@ in
         ${builtins.readFile ./nvim/plugins/harpoon.lua}
         ${builtins.readFile ./nvim/plugins/guess-indent.lua}
         ${builtins.readFile ./nvim/plugins/neowiki.lua}
+        ${builtins.readFile ./nvim/plugins/gitsigns.lua}
         require("ibl").setup()
         require("bufferline").setup{}
         require("lualine").setup({
