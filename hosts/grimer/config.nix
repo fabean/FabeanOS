@@ -137,6 +137,9 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  };
 
   users = {
     mutableUsers = true;
@@ -172,7 +175,7 @@
     ZANEYOS = "true";
     TERM = "xterm-256color";
   };
-
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "i965"; };
   # Services to start
   services = {
     
@@ -202,8 +205,8 @@
       configDir = "/home/${username}/.config/syncthing";
     };
 
-    rpcbind.enable = false;
-    nfs.server.enable = false;
+    rpcbind.enable = true;
+    nfs.server.enable = true;
     tailscale = {
       enable = true;
       useRoutingFeatures = "both";
@@ -258,6 +261,22 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = false; # No need for 32-bit support on server
+    extraPackages = with pkgs; [
+      intel-ocl # Generic OpenCL support
+
+      # For Broadwell and newer (ca. 2014+), use with LIBVA_DRIVER_NAME=iHD:
+      intel-media-driver
+
+      # For older processors, use with LIBVA_DRIVER_NAME=i965:
+      intel-vaapi-driver
+      libva-vdpau-driver
+
+      # For older processors:
+      intel-compute-runtime-legacy1
+
+      # For 11th gen and newer:
+      vpl-gpu-rt
+    ];
   };
 
   # Open ports in the firewall.
