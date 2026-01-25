@@ -146,6 +146,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    bat
+    starship
+    libva-utils
     btop
     ctop
     eza
@@ -175,7 +178,7 @@
     ZANEYOS = "true";
     TERM = "xterm-256color";
   };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "i965"; };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
   # Services to start
   services = {
     
@@ -260,7 +263,7 @@
   # OpenGL - can be simplified for server
   hardware.graphics = {
     enable = true;
-    enable32Bit = false; # No need for 32-bit support on server
+    enable32Bit = true; # No need for 32-bit support on server
     extraPackages = with pkgs; [
       intel-ocl # Generic OpenCL support
 
@@ -276,14 +279,16 @@
 
       # For 11th gen and newer:
       vpl-gpu-rt
+      libvdpau-va-gl
+      vaapiIntel          # Optional fallback for i965
     ];
   };
 
   # Open ports in the firewall.
   networking = {
     firewall = {
-      allowedTCPPorts = [ 8384 22000 9003 5432 ];
-      allowedUDPPorts = [ 22000 21027 ];
+      allowedTCPPorts = [ 8384 22000 9003 5432 8096 ];
+      allowedUDPPorts = [ 22000 21027 7359 ];
     };
     extraHosts = ''
 
