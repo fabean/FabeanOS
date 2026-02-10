@@ -217,6 +217,14 @@
     fwupd.enable = true;
   };
 
+   # NFS mounts
+  fileSystems."/mnt/exeggcute" = {
+    device = "192.168.86.18:/srv/nfs/storage";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
+  };
+
+
   # Security / Polkit
   security.rtkit.enable = true;
   security.polkit.enable = true;
