@@ -221,7 +221,14 @@
   fileSystems."/mnt/exeggcute" = {
     device = "192.168.86.18:/srv/nfs/storage";
     fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" ];
+    options = [
+      "_netdev"
+      "noauto"
+      "nofail"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=60s"
+      "x-systemd.mount-timeout=10s"
+    ];
   };
 
 
