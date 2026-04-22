@@ -35,7 +35,7 @@
   outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, flatpaks, wiremix, ... }:
     let
       system = "x86_64-linux";
-      host = "farfetchd";
+      host = "ivysaur";
       username = "josh";
     in {
       nixosConfigurations = {

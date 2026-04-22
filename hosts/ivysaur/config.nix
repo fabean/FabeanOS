@@ -295,8 +295,8 @@
   # Open ports in the firewall.
   networking = {
     firewall = {
-      allowedTCPPorts = [ 8384 22000 9003 5432 8096 ];
-      allowedUDPPorts = [ 22000 21027 7359 ];
+      allowedTCPPorts = [ 8384 22000 9003 5432 8096 18789 18790 5000 8971 8554 8555 ];
+      allowedUDPPorts = [ 22000 21027 7359 8555 ];
     };
     extraHosts = ''
 
